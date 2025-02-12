@@ -1,0 +1,5 @@
+classes = 4
+train = E:/Aditya_Thesis_V2/nn/rdd/rdd_train.txt
+valid = E:/Aditya_Thesis_V2/nn/rdd/rdd_valid.txt
+names = E:/Aditya_Thesis_V2/nn/rdd/rdd.names
+backup = E:/Aditya_Thesis_V2/nn/rdd
