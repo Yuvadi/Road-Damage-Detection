@@ -1,0 +1,6 @@
+[submodule "vcpkg"]
+	path = vcpkg
+	url = https://github.com/microsoft/vcpkg
+[submodule "darknet"]
+	path = darknet
+	url = https://github.com/hank-ai/darknet.git
