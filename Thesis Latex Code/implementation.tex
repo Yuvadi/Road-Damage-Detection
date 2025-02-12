@@ -1,0 +1,831 @@
+\chapter{Implementation, Testing \& Results}
+
+This chapter will be demonstrating the implementation and testing done during the thesis also analyzing the results.
+
+
+\section{Hardware Components}
+
+The hardware used for training and initial testing includes a laptop equipped with an RTX 3050ti with CUDA drivers enabled (laptop edition) GPU, 16GB of RAM, and an Intel i7 H 12th Gen processor (laptop edition). For edge deployment, a Raspberry Pi 5 with 8GB of RAM and 32GB of storage was utilized, powered by a 5V, 5A adapter.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/ezgif-6-b7521061ad.png}
+    \caption{Raspberry Pi 5}
+    \label{fig:rpi5}
+\end{figure}
+
+\section{Software Components}
+
+\subsection{Operating System and Libraries}
+
+The training of models were done using Darknet and PyTorch on Windows 11.
+
+\subsection{Frameworks and Libraries}
+
+%\textbf{TensorFlow 2}: This framework was employed for training models like MobileNetV3 and EfficientNetV2 B2. TensorFlow is an open-source machine learning library developed by Google, known for its flexibility and comprehensive ecosystem.
+
+\textbf{Darknet}: Used for training models YOLO v3 Tiny and YOLO v7. Darknet is an open-source neural network framework written in C and CUDA, known for its efficiency and speed in real-time object detection tasks.
+
+\noindent\textbf{PyTorch 2.5.1}: This version of PyTorch was used to train models like YOLO11n-OBB, YOLO11n, and YOLO11n-Seg. PyTorch is an open-source machine learning library developed by Facebook's AI Research lab, known for its dynamic computation graph and ease of use.
+
+\subsection{Libraries}
+
+\begin{itemize}
+    \item \textbf{Ultralytics}: A library that provides implementations of YOLO models, facilitating easy training and deployment.
+
+\item\textbf{OS}: A standard Python library for interacting with the operating system, used for tasks such as file and directory management.
+
+\item\textbf{OpenCV (cv2)}: An open-source computer vision library that provides tools for image processing, video capture, and analysis.
+
+\item\textbf{xml.etree.ElementTree}: A library for parsing and creating XML documents, used for handling annotation files.
+
+\item\textbf{Shutil}: A Python library for high-level file operations, such as copying and removing files.
+
+\text{TQDM}: A library for creating progress bars, useful for tracking the progress of long-running tasks.
+
+\item\textbf{Pathlib}: A library for object-oriented filesystem paths, providing an intuitive way to handle file paths.
+
+\item\textbf{PIL (Pillow)}: A Python Imaging Library that adds image processing capabilities to Python, used for tasks such as image resizing and format conversion.
+
+\item\textbf{Numpy}: A fundamental package for scientific computing in Python, providing support for large, multidimensional arrays and matrices, along with a collection of mathematical functions.
+
+\end{itemize}
+
+\subsection{Edge Device Operating System}
+
+The Raspberry Pi 5 runs on Ubuntu 24.04 LTS, with the Ultralytics library used for deploying the final trained model.
+
+\section{Language \& IDE Setup}
+
+Throughout the duration of this thesis, Python 3.12 was utilized for all implementations and testing. The models were trained using the PyTorch and Ultralytics libraries, both of which are Python-based. Additionally, all dataset manipulations were performed using Python, ensuring a seamless and efficient workflow. For models based on the Darknet framework, C++ was used. As for the IDE Visual Studio code Insiders build was used.
+
+
+\section{Environment Setup}
+A new environment was built on the laptop (the training machine) to install the dependencies and libraries. The following code was inserted line by line into the IDE's Terminal:
+\begin{figure}
+    \centering
+    \begin{verbatim}
+        cd Aditya_Thesis_Project
+        pip install python3-venv
+        python -m venv yolo_env
+        cd yolo_env/Scripts
+        activate.bat
+    \end{verbatim}
+    \caption{Activating Environment}
+    \label{fig:ae}
+\end{figure}
+
+
+Once the environment was activated, all dependencies and libraries listed in Chapter \ref{specs} were installed to their latest compatible versions.
+
+\section{Dataset Preparation}
+
+Both datasets mentioned in the dataset overview section in Chapter \ref{specs} were downloaded and extracted.
+
+Firstly, a \texttt{data.yaml} file was created, containing details about the file locations and annotations, such as the classes and the number of classes. 
+
+\begin{figure}[h]
+    \centering
+    \begin{verbatim}
+    train: ../train/images
+    val: ../val/images
+    test: ../test/images
+    
+    nc: 4
+    names: ['D00', 'D10', 'D20', 'D40']
+    \end{verbatim}
+    \caption{Data.yaml File}
+    \label{fig:enter-label}
+\end{figure}
+
+Next, the annotations were converted from XML format, used for TensorFlow-based models, to appropriate formats such as YOLO format in text files for Darknet models and YOLO11n. Here is an example:
+
+\begin{figure}[h]
+    \centering
+    \begin{verbatim}
+    <object-class> <x_center> <y_center> <width> <height>
+    0 0.6591796875 0.796875 0.064453125 0.34375
+    1 0.8701171875 0.5986328125 0.248046875 0.068359375
+    \end{verbatim}
+    \caption{Example of YOLO Annotation Format}
+    \label{fig:ann_yolo}
+\end{figure}
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/two-persons-tie.jpg}
+        \caption{YOLO Format Representation}
+        \label{fig:xyl}
+\end{figure}
+
+The YOLO annotation format contains:
+\begin{itemize}
+    \item \textbf{Object class:} Represents the class according to the index value of the class array in the YAML file. For example, in Figure \ref{fig:ann_yolo}, 0 represents D00, and so on.
+    \item \textbf{X\_center and Y\_center:} These represent the bounding box center values according to the image's pixels, as shown in Figure \ref{fig:xyl}.
+    
+    \item \textbf{Width and height:} The width and height of the bounding box in pixels, also illustrated in Figure \ref{fig:xyl}.
+\end{itemize}
+
+The code for this process is available in Appendix \ref{sec:normalformat}.
+\\
+
+As for yolo11n obb and seg, they have their own unique format in txt files and the yolo format were converted to them for these models.
+\\
+\\
+\textbf{YOLO OBB format}: 
+
+OBB stands for Oriented Bounding Box which is different from the YOLO format as it introduces orientation to the box and it is represented like this:
+\\
+\begin{figure}[H]
+    \centering
+    \begin{verbatim}
+    <object-class> <x1>, <y1>, <x2> <y2> <x3> <y3> <x4> <y4>
+    0 0.780811 0.743961 0.782371 0.74686 0.777691 0.752174 0.776131 0.749758
+    \end{verbatim}
+    \caption{Example of YOLO OBB Annotation Format}
+    \label{fig:ann yoloobb}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/obbformat.png}
+    \caption{Explanation of YOLO OBB Format} \href{https://github.com/THU-MIG/yolov10/blob/main/docs/en/datasets/obb/index.md}{Source: THU-MIG GITHUB}
+    \label{fig:obb explnationl}
+\end{figure}
+
+
+\textbf{YOLO seg format}: 
+
+Segmentation annotation format introduces segmentation masks to the bounding boxes, allowing for more precise object localization. Unlike the standard YOLO format, which uses rectangular bounding boxes, YOLO11n segmentation provides pixel-level annotations. This format is represented as follows:
+
+
+\begin{figure}[h]
+    \centering
+    \begin{verbatim}
+    <object-class> <x_center> <y_center> <width> <height> <segmentation-mask> 
+    0 0.6591796875 0.796875 0.064453125 0.34375 [mask data]
+    \end{verbatim}
+    \caption{Example of YOLO OBB Annotation Format}
+    \label{fig:ann yoloobb}
+\end{figure}
+
+This can be visualized like this:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/seggormat.png}
+    \caption{Segmentation Visual} \href{https://www.ultralytics.com/blog/how-to-use-ultralytics-yolo11-for-instance-segmentation}{Source: Ultralytics}
+    \label{fig:segvisual}
+\end{figure}
+
+
+The codes to convert to these format are available in the appendix at A.2 and A.3 respectively.
+\\
+\\
+After getting all of the appropriate formats for the models, next the images were converted gray scale images. The code for this is available in the appendix at A.4.
+
+Then the Dataset was split into 80\% Train, 10\% Valid and 10\% Test using the code available in the appendix at A.5
+
+\section{Framework Setup}
+
+For both of the frameworks Compatible CUDA and cuDNN Drivers were install and verified.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/nvidiasmi.png}
+    \caption{nvidia-smi Details}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/nvcc.png}
+    \caption{nvcc Version details}
+\end{figure}
+
+
+\subsection{Darknet}
+
+To set up the Darknet framework on Windows, I followed the detailed instructions provided in the \href{https://github.com/hank-ai/darknet}{Darknet GitHub repository from hank-ai}. Here are the steps I took to ensure a smooth installation and configuration:
+
+First, I installed the necessary tools and dependencies. This included Visual Studio 2022 Community Edition, CMake, and Git. I used the following commands in the command prompt to install these tools:
+\begin{figure}[H]
+    \centering
+    \begin{verbatim}
+winget install Git.Git
+winget install Kitware.CMake
+winget install Microsoft.VisualStudio.2022.Community
+\end{verbatim}
+    \caption{Installing necessary tools}
+\end{figure}
+
+
+Next, I modified the Visual Studio installation to include support for C++ applications. I opened the Visual Studio Installer, selected "Modify," and then chose "Desktop Development with C++."
+\\
+After setting up Visual Studio, I installed Microsoft VCPKG to manage the dependencies. I ran the following commands in the Developer Command Prompt for Visual Studio:
+\begin{figure}[H]
+    \centering
+    \begin{verbatim}
+cd C:\
+mkdir C:\src
+cd C:\src
+git clone https://github.com/microsoft/vcpkg
+cd vcpkg
+bootstrap-vcpkg.bat
+.\vcpkg.exe integrate install
+.\vcpkg.exe install 
+opencv[contrib,dnn,freetype,jpeg,openmp,png,webp,world]:x64-windows
+\end{verbatim}
+    \caption{VCPKG installation}
+\end{figure}
+
+
+Once VCPKG was set up, I cloned the Darknet repository and built the project using CMake:
+
+\begin{figure}[H]
+    \centering
+    \begin{verbatim}
+cd C:\src
+git clone https://github.com/hank-ai/darknet.git
+cd darknet
+mkdir build
+cd build
+
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=
+C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+
+msbuild.exe /property:Platform=x64;Configuration=Release /target:Build 
+-maxCpuCount -verbosity:normal -detailedSummary darknet.sln
+
+msbuild.exe /property:Platform=x64;Configuration=Release PACKAGE.vcxproj
+\end{verbatim}
+    \caption{Cloning Darknet Repository}
+\end{figure}
+
+
+
+Finally, I ran the NSIS installation wizard to correctly install Darknet, including the necessary libraries, include files, and DLLs. This ensured that Darknet was fully operational on my Windows system.
+
+\subsection{PyTorch with Ultralytics}
+
+To set up the PyTorch environment with the Ultralytics library, I followed the detailed instructions provided in the \href{https://docs.ultralytics.com/quickstart/}{Ultralytics YOLO Docs}. 
+
+First, I installed the necessary tools and dependencies. This included Python, PyTorch, and the Ultralytics library. 
+\\
+For PyTorch installation command was taken from the official website using the settings adjusted to the required:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/pytorch.png}
+    \caption{PyTorch Installation Command}
+    \label{fig:enter-label}
+\end{figure}
+As for installing Ultralytics library this comand was used
+\begin{verbatim}
+pip install ultralytics
+\end{verbatim}
+
+Next, I verified the installation of PyTorch and CUDA to ensure that the GPU acceleration was functional. This was done by running the following commands:
+
+\begin{verbatim}
+python -c "import torch; print(torch.cuda.is_available())"
+\end{verbatim}
+
+and the output was \texttt{True}.
+
+\section{Phase Briefing}  
+Implementation and testing have been divided into four phases, as follows:  
+
+\begin{itemize}  
+    \item Phase 1: Initial Training and Evaluation  
+    \subitem \noindent In this phase, all models were tested with minimal training cycles to assess which ones showed promise for further training. 
+      
+    \item Phase 2: Final Model Training  
+    \subitem \noindent In this phase, the selected promising model will undergo additional training cycles until further improvement becomes insignificant relative to the time spent on training.  
+    
+    \item Phase 3: Pruning  
+    \subitem \noindent This phase will focus on pruning the model, as discussed in Chapter \ref{specs}, to optimize performance while maintaining accuracy with minimal impact.  
+    
+    \item Phase 4: Benchmarking on Edge Device  
+    \subitem \noindent In this phase, the original and pruned models will be benchmarked on the edge device using the test dataset to evaluate their performance in real-world scenarios.  
+\end{itemize}
+
+
+
+
+\section{Phase 1: Initial Training and evaluation}
+
+For the initial training, all models were trained for minimum recommend cycles.
+
+\subsection{YOLO V3 Tiny and Yolo V7}
+For Darknet models, .data extension file needs to be made instead of .yaml extension  in which file paths and amount of classes are inserted. Additionally, a names file is also made in which all of the names of the classes are inserted in order.The dataset has to be setup like this in order to train:
+
+\begin{verbatim}
+    rdd
+          |\_train
+          |  \_data.names
+          |   \_sample1.jpg
+          |    \_sample1.txt
+          |          
+          |\_valid
+          |  \_data.names
+          |   \_sample1.jpg
+          |    \_sample1.txt
+          |
+          |\rdd.data
+          |
+          |\rdd_train.txt(list of all the images path
+          | in the train folder)
+          |
+           \rdd_valid.txt(list of all the images path 
+           in the valid folder)
+\end{verbatim}
+
+Then modification of the original configuration of the models needs to be done:
+\begin{itemize}
+    
+ \item Batch size and subdivision are set to 32 to make sure they run on this pc efficiently and correctly.
+
+\item The minimum recommended max batch value is 2000 multiplied by the number of classes, which in this class would be 8000
+
+\item Steps need to be set 80\% and 90\% of the max batch so that would be 6400 and 7200.
+
+\item Width and Height were set 640,640 pixels as said in Chapter \ref{specs}.
+
+\item Classes is set to 4 as the dataset has 4 classes.
+
+ \item For all of the filters in the convolutional prior to YOLO section in the configuration is set 27 based on the formula:
+
+\begin{equation}
+    Filter Value = (number of classes + 5)*3
+\end{equation}
+
+\item Rest of the configuration were similar to the ones mentioned in specification chapter \ref{specs}.
+\end{itemize}
+
+The following CLI commands are used to train Yolo v3 tiny and Yolo v7 with coco trained weights.
+
+\begin{verbatim}
+darknet detector -map -dont_show --verbose train rdd.data
+yolov3tiny.cfg  
+
+darknet detector -map -dont_show --verbose train rdd.data
+yolov7.cfg
+\end{verbatim}
+
+After completing through the minium batches, Yolo v3 tiny gave a mAP50 score of 36.57\% and yolo7 gave 41.23\%.
+
+\section{Yolo11n, Yolo11n-OBB and Yolo11n-seg}
+For PyTorch models, No major modifications or changes were needed from what was described in Specifications chapter \ref{specs}. These are the codes used to train the models yolo11n, yolo11n-obb, yolo11n-seg:
+
+\lstset{basicstyle=\scriptsize\ttfamily, breaklines=true, breakatwhitespace=true,captionpos=b}
+\begin{lstlisting}[language=Python, caption=Yolo11n Training code]
+from ultralytics import YOLO  # build a new model from YAML
+
+model = YOLO("yolo11n.yaml")  
+model = YOLO("yolo11n.pt") 
+model = YOLO("yolo11n.yaml").load("yolo11n.pt")  
+
+results = model.train(data="yolo-Dataset/data.yaml", epochs=100, imgsz=640, plots=True, optimizer='Adam', lr0=0.001, weight_decay=0.0005, momentum=0.937, device=0, val=True, lrf=0.001,resume=True)
+\end{lstlisting}
+
+\lstset{basicstyle=\scriptsize\ttfamily, breaklines=true, breakatwhitespace=true,captionpos=b}
+\begin{lstlisting}[language=Python, caption=Yolo11n-obb Training code]
+from ultralytics import YOLO  # build a new model from YAML
+
+model = YOLO("yolo11n-obb.yaml")  
+model = YOLO("yolo11n.pt") 
+model = YOLO("yolo11n-obb.yaml").load("yolo11n.pt")  
+
+results = model.train(data="yolo-obb-Dataset/data.yaml", epochs=100, imgsz=640, plots=True, optimizer='Adam', lr0=0.001, weight_decay=0.0005, momentum=0.937, device=0, val=True, lrf=0.001,resume=True)
+\end{lstlisting}
+
+\lstset{basicstyle=\scriptsize\ttfamily, breaklines=true, breakatwhitespace=true,captionpos=b}
+\begin{lstlisting}[language=Python, caption=Yolo11n-seg Training code]
+from ultralytics import YOLO  # build a new model from YAML
+
+model = YOLO("yolo11n-seg.yaml")  
+model = YOLO("yolo11n.pt") 
+model = YOLO("yolo11n-seg.yaml").load("yolo11n.pt")  
+
+results = model.train(data="yolo-seg-Dataset/data.yaml", epochs=100, imgsz=640, plots=True, optimizer='Adam', lr0=0.001, weight_decay=0.0005, momentum=0.937, device=0, val=True, lrf=0.001,resume=True)
+\end{lstlisting}
+
+After completing through the 100 epochs, Yolo11n gave a mAP50 score of 56.95\%, yolo11n-obb gave 67.34\% and yolo11n-seg gave 47.27\%.
+
+Here is a summary of the result of phase 1:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Model} & \textbf{mAP50} \\
+        \hline
+        V3 Tiny & 36.57\% \\
+        V7 & 41.23\% \\
+        V11 & 56.95\% \\
+        V11 obb & 67.34\% \\
+        V11 seg & 47.27\% \\
+        \hline
+    \end{tabular}
+    \caption{Phase 1 Results}
+    \label{tab:model_performance}
+\end{table}
+
+After looking at the results Yolo11n-obb model was selected.
+
+\section{Phase 2: Final model training}
+
+\subsection{Training}
+The model was trained for 450 epochs using the parameters as the previous phase to give a proper training period.
+Total training time was approximately 55 hours with mAP50 score of 76.819\%.
+\\
+Here are the Precision-Recall graph and F1 score graph after training:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/orignal results/F1_curve.png}
+    \caption{F1 Score Graph}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/orignal results/PR_curve.png}
+    \caption{PR Graph}
+\end{figure}
+
+The figure \ref{Yolo11nnetwork} in the next page represents the network of the model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{figures/obb_train8 (2).png}
+    \caption{Yolo11n-OBB Model Network}
+    \label{Yolo11nnetwork}
+\end{figure}
+
+\section{Phase 3: Pruning}
+As Discussed in the Model Optimization Pruning Techniques section \ref{puringtech}. The following code applies all of them and is modified from the code originally available at 
+\begin{CJK*}{UTF8}{gbsn} \href{https://blog.csdn.net/W_extend/article/details/144070375}{CSDN Blog by the user 数学人学python.} \end{CJK*}
+\\
+Implemented from the section 
+original code from the Chinese website
+modified code version
+explanation of the code 
+pruned at 10 and 20
+show graphs
+model network 
+
+
+
+
+
+
+\subsection{Imports and Environment Setup}
+
+\begin{lstlisting}[language=Python]
+from ultralytics import YOLO
+import torch
+from ultralytics.nn.modules import Bottleneck, Conv, C2f, SPPF, Detect, C3k2
+from torch.nn.modules.container import Sequential
+import os
+import torch.nn.functional as F
+
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+\end{lstlisting}
+
+The code begins by importing necessary libraries and modules. The \texttt{YOLO} class from \texttt{ultralytics} is used for the YOLO model. Various neural network modules and functionalities from \texttt{torch} are imported for model manipulation and functional operations.
+
+\subsection{PRUNE Class}
+
+\begin{lstlisting}[language=Python]
+class PRUNE():
+    def __init__(self) -> None:
+        self.threshold = None
+\end{lstlisting}
+
+The \texttt{PRUNE} class is defined to handle the pruning operations. The \texttt{\_\_init\_\_} method initializes the threshold to \texttt{None}.
+
+\subsubsection{Threshold Calculation}
+
+\begin{lstlisting}[language=Python]
+    def get_threshold(self, model, factor=0.9):
+        ws = []
+        bs = []
+        for name, m in model.named_modules():
+            if isinstance(m, torch.nn.BatchNorm2d):
+                w = m.weight.abs().detach()
+                b = m.bias.abs().detach()
+                ws.append(w)
+                bs.append(b)
+                print(name, w.max().item(), w.min().item(), b.max().item(), b.min().item())
+                print()
+        ws = torch.cat(ws)
+        self.threshold = torch.sort(ws, descending=True)[0][int(len(ws) * factor)]
+\end{lstlisting}
+
+The \texttt{get\_threshold} method calculates the threshold value for pruning based on the weights of the BatchNorm layers (Section 3.7.1). It collects the weights and biases of all BatchNorm layers, sorts them, and sets the threshold to the value at a specified factor of the sorted weights.
+
+\subsubsection{Convolutional Layer Pruning}
+
+\begin{lstlisting}[language=Python]
+    def prune_conv(self, conv1: Conv, conv2: Conv):
+        gamma = conv1.bn.weight.data.detach()
+        beta = conv1.bn.bias.data.detach()
+
+        keep_idxs = []
+        local_threshold = self.threshold
+        while len(keep_idxs) < 8:
+            keep_idxs = torch.where(gamma.abs() >= local_threshold)[0]
+            local_threshold = local_threshold * 0.5
+        n = len(keep_idxs)
+        print(n / len(gamma) * 100)
+        conv1.bn.weight.data = gamma[keep_idxs]
+        conv1.bn.bias.data = beta[keep_idxs]
+        conv1.bn.running_var.data = conv1.bn.running_var.data[keep_idxs]
+        conv1.bn.running_mean.data = conv1.bn.running_mean.data[keep_idxs]
+        conv1.bn.num_features = n
+        conv1.conv.weight.data = conv1.conv.weight.data[keep_idxs]
+        conv1.conv.out_channels = n
+
+        if isinstance(conv2, list) and len(conv2) > 3 and conv2[-1]._get_name() == "Proto":
+            proto = conv2.pop()
+            proto.cv1.conv.in_channels = n
+            proto.cv1.conv.weight.data = proto.cv1.conv.weight.data[:, keep_idxs]
+        if conv1.conv.bias is not None:
+            conv1.conv.bias.data = conv1.conv.bias.data[keep_idxs]
+
+        if not isinstance(conv2, list):
+            conv2 = [conv2]
+        for item in conv2:
+            if item is None: continue
+            if isinstance(item, Conv):
+                conv = item.conv
+            else:
+                conv = item
+            if isinstance(item, Sequential):
+                conv1 = item[0]
+                conv = item[1].conv
+                conv1.conv.in_channels = n
+                conv1.conv.out_channels = n
+                conv1.conv.groups = n
+                conv1.conv.weight.data = conv1.conv.weight.data[keep_idxs, :]
+                conv1.bn.bias.data = conv1.bn.bias.data[keep_idxs]
+                conv1.bn.weight.data = conv1.bn.weight.data[keep_idxs]
+                conv1.bn.running_var.data = conv1.bn.running_var.data[keep_idxs]
+                conv1.bn.running_mean.data = conv1.bn.running_mean.data[keep_idxs]
+                conv1.bn.num_features = n
+            conv.in_channels = n
+            conv.weight.data = conv.weight.data[:, keep_idxs]
+\end{lstlisting}
+
+The \texttt{prune\_conv} method prunes the Convolutional layers based on the calculated threshold (Section 3.7.2). It modifies the weights, biases, and other parameters of the BatchNorm and Convolutional layers to retain only the important filters.
+
+\subsubsection{Sequential Pruning}
+
+\begin{lstlisting}[language=Python]
+    def prune(self, m1, m2):
+        if isinstance(m1, C3k2):
+            m1 = m1.cv2
+        if isinstance(m1, Sequential):
+            m1 = m1[1]
+        if not isinstance(m2, list):
+            m2 = [m2]
+        for i, item in enumerate(m2):
+            if isinstance(item, C3k2) or isinstance(item, SPPF):
+                m2[i] = item.cv1
+
+        self.prune_conv(m1, m2)
+\end{lstlisting}
+
+The \texttt{prune} method handles sequential pruning (Section 3.7.3). It ensures that layers like \texttt{C3k2} and \texttt{SPPF} are pruned while maintaining the model architecture.
+
+\subsection{Distillation Loss}
+
+\begin{lstlisting}[language=Python]
+def distillation_loss(student_output, teacher_output, labels, temperature=3.0, alpha=0.5):
+    soft_labels = F.softmax(teacher_output / temperature, dim=1)
+    soft_loss = F.kl_div(F.log_softmax(student_output / temperature, dim=1), soft_labels, reduction='batchmean') * (temperature ** 2)
+    hard_loss = F.cross_entropy(student_output, labels)
+    return alpha * soft_loss + (1 - alpha) * hard_loss
+\end{lstlisting}
+
+The \texttt{distillation\_loss} function calculates the loss for knowledge distillation (Section 3.7.4). It combines the soft loss (KL divergence) and hard loss (cross-entropy) to train the student model to mimic the teacher model.
+
+\subsection{Pruning Process}
+
+\begin{lstlisting}[language=Python]
+def do_pruning(modelpath, savepath):
+    pruning = PRUNE()
+
+    yolo = YOLO(modelpath)
+    pruning.get_threshold(yolo.model, [Ratio of the pruning needed])
+
+    for name, m in yolo.model.named_modules():
+        if isinstance(m, Bottleneck):
+            pruning.prune_conv(m.cv1, m.cv2)
+
+    seq = yolo.model.model
+    for i in [3, 5, 7, 8]:
+        pruning.prune(seq[i], seq[i + 1])
+
+    detect: Detect = seq[-1]
+    proto = getattr(detect, 'proto', None)
+    last_inputs = [seq[16], seq[19], seq[22]]
+    colasts = [seq[17], seq[20], None]
+    for idx, (last_input, colast, cv2, cv3, cv4) in enumerate(zip(last_inputs, colasts, detect.cv2, detect.cv3, detect.cv4)):
+        if idx == 0:
+            pruning.prune(last_input, [colast, cv2[0], cv3[0], cv4[0], proto] if proto else [colast, cv2[0], cv3[0], cv4[0]])
+        else:
+            pruning.prune(last_input, [colast, cv2[0], cv3[0], cv4[0]])
+        pruning.prune(cv2[0], cv2[1])
+        pruning.prune(cv2[1], cv2[2])
+        pruning.prune(cv3[0], cv3[1])
+        pruning.prune(cv3[1], cv3[2])
+        pruning.prune(cv4[0], cv4[1])
+        pruning.prune(cv4[1], cv4[2])
+
+    for name, p in yolo.model.named_parameters():
+        p.requires_grad = True
+
+    yolo.val(data='Balanced-Dataset/data.yaml', batch=2, device=0, workers=0)
+    torch.save(yolo.ckpt, savepath)
+
+if __name__ == "__main__":
+    modelpath = "runs/obb/train8/weights/last.pt"
+    savepath = "runs/obb/train8/weights/pruned_model.pt"
+    do_pruning(modelpath, savepath)
+\end{lstlisting}
+
+The \texttt{do\_pruning} function orchestrates the pruning process. It loads the YOLO model, calculates the threshold, and applies pruning to various layers. Finally, it saves the pruned model.
+
+
+\subsection{Pruning results:}
+The model was pruned at 90\% and 80\% and here are the results:
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/90pruned/PR_curve.png}
+        \caption{PR Curve}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/90pruned/F1_curve.png}
+        \caption{F1 Curve}
+    \end{subfigure}
+    \caption{At 90\% Pruning Results}
+
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/80pruned/PR_curve.png}
+        \caption{PR Curve}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/80pruned/F1_curve.png}
+        \caption{F1 Curve}
+    \end{subfigure}
+    \caption{At 80\% Pruning Results}
+
+\end{figure}
+
+
+
+\section{Phase 4: Benchmarking on Edge Device}
+\subsection{Installation of Ubuntu and Dependencies}
+Firstly using Raspberry Pi Imager on windows, the SD card is flashed with Ubuntu 24.04 LTS OS for RPI5.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/rpiimager.png}
+    \caption{Raspberry Pi Imager}
+\end{figure}
+
+After that, Ultralytics was installed for benchmarking by following the instructions provided by Aleksandar Haber on \href{https://aleksandarhaber.com/install-and-run-yolo-computer-vision-model-on-raspberry-pi-5-and-linux-ubuntu/}{his website}.
+
+
+ Installing Git and Git LFS:
+\begin{verbatim}
+sudo apt update && sudo apt upgrade
+sudo apt install git
+sudo apt-get install git-lfs
+\end{verbatim}
+
+Initializing Git LFS:
+\begin{verbatim}
+sudo git lfs install
+git lfs install
+\end{verbatim}
+
+Creating a workspace folder and a Python virtual environment:
+\begin{verbatim}
+sudo apt install python3.12-venv
+cd ~
+mkdir testYolo
+cd testYolo
+python3 -m venv env1
+source env1/bin/activate
+\end{verbatim}
+
+Installing the necessary libraries:
+\begin{verbatim}
+pip install setuptools
+pip install git+https://github.com/ultralytics/ultra-
+lytics.git@main
+\end{verbatim}
+
+Now once this was done the test dataset was renamed to valid and and copied to Raspberry pi 5 in directory.
+
+\subsection{Benchmarking}
+The original and pruned models are benchmarked using the following command:
+\begin{verbatim}
+    yolo benchmark model=weights/{MODEL NAME} 
+    data='Balanced-Dataset/data.yaml' imgsz=640
+\end{verbatim}
+
+This command is inserted the terminal after activating the enviorment and then it exports the models in various formats such as TorchScript, ONNX and OpenVINO to name a few. Once exported they are benchmarked on the test dataset and mAP50 scores and average FPS results are given.
+
+The whole benchmarking is done over ssh to bring out the best performance possible from the device as graphical output to the display takes quite a few resources.\\\\
+
+\section{Results}
+
+\subsection{Performance Metrics Overview}
+
+The performance of the YOLOv11n-OBB model was assessed based on two key metrics:
+\begin{itemize}
+    \item mAP50 (Mean Average Precision at 50\% IoU) – Measures model accuracy for detecting road damages.
+    \item FPS (Frames Per Second) – Evaluates the real-time feasibility of the model on the edge device.
+\end{itemize}
+
+\subsection{Benchmarking on Edge Device}
+
+The original and pruned models were tested on Raspberry Pi 5 using the test dataset. The results were as follows:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Format} & \textbf{mAP50} & \textbf{Interference Time (ms/im)} & \textbf{FPS} & \textbf{Size (MB)} \\
+        \hline
+        PyTorch & 76.90\% & 604 & 1.66 & 15.9 \\
+        TorchScript & 75.60\% & 619.71 & 1.61 & 10.7 \\
+        ONNX & 75.60\% & 244.89 & 4.08 & 10.3 \\
+        OpenVINO & 75.50\% & 111.63 & 8.96 & 10.5 \\
+        PaddlePaddle & 75.60\% & 698.57 & 1.43 & 20.7 \\
+        MNN & 75.60\% & 141.99 & 7.04 & 10.2 \\
+        NCNN & 75.50\% & 104.65 & 9.56 & 10.2 \\
+        \hline
+    \end{tabular}
+    \caption{Orignal Model Results}
+    \label{tab:100res}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Format} & \textbf{mAP50} & \textbf{Interference Time (ms/im)} & \textbf{FPS} & \textbf{Size (MB)} \\
+        \hline
+        PyTorch & 76.20\% & 603.53 & 1.66 & 19.9 \\
+        TorchScript & 74.70\% & 602.11 & 1.66 & 9.8 \\
+        ONNX & 74.70\% & 221.72 & 4.51 & 9.5 \\
+        OpenVINO & 74.60\% & 103.12 & 9.7 & 9.7 \\
+        PaddlePaddle & 74.70\% & 614.84 & 1.63 & 19 \\
+        MNN & 74.60\% & 135.1 & 7.4 & 9.4 \\
+        NCNN & 74.60\% & 100.04 & 10 & 9.4 \\
+        \hline
+    \end{tabular}
+    \caption{Pruned at 90\% Results}
+    \label{tab:90res}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Format} & \textbf{mAP50} & \textbf{Interference Time (ms/im)} & \textbf{FPS} & \textbf{Size (MB)} \\
+        \hline
+        PyTorch & 76\% & 489.97 & 2.04 & 19.2 \\
+        TorchScript & 74.60\% & 485.25 & 2.06 & 9.1 \\
+        ONNX & 74.60\% & 181.2 & 5.52 & 8.7 \\
+        OpenVINO & 74.50\% & 79.97 & 12.5 & 8.9 \\
+        PaddlePaddle & 74.60\% & 552.02 & 1.81 & 17.5 \\
+        MNN & 74.60\% & 109.7 & 9.12 & 8.6 \\
+        NCNN & 74.60\% & 103.49 & 9.66 & 8.7 \\
+        \hline
+    \end{tabular}
+    \caption{Pruned at 80\% Results}
+    \label{tab:80res}
+\end{table}
+
+\subsection{Analysis of Model Performance}
+\vspace{1cm}
+\textbf{Original Model Performance:}
+The original YOLOv11n-OBB model achieved a mAP50 of 75.50\% and a frame processing rate of 9.56 FPS using the NCNN format. These results indicate that the model can efficiently detect road damage while maintaining real-time processing capabilities. The relatively high accuracy suggests that the model effectively differentiates between different crack types and potholes, making it suitable for deployment but it does not have any buffer in the case of delay in pre-processing of the images. This makes the model applicable to be used during manual inspection to detect damages which might be overseen by the inspectors due to human error.\\\\
+\noindent\textbf{Impact of Pruning at 90\%:}\\
+After applying 90\% pruning, the model's FPS increased to 10 FPS, while the mAP50 slightly decreased to 74.60\%. This trade-off shows that pruning can effectively improve inference speed with a negligible drop in detection accuracy. The increase in FPS ensures smoother real-time detection, making this pruned model optimal for cities with lower limit of driving speed and to handle any delays introduced by other parts of the system.\\\\
+
+\noindent\textbf{Impact of Pruning at 80\%:}\\
+Further pruning at 80\% significantly enhances FPS, reaching 12.5 FPS, but results in a minor accuracy reduction to 74.50\%. This version of the model is best suited for the cities with higher speed limits and also handling the delays introduced by other processes of the system.

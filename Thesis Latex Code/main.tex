@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tocbibind}
+\usepackage{float}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{pgfplotstable}
+
+ \usepackage{booktabs}
+ \usepackage[normalem]{ulem}
+ \useunder{\uline}{\ul}{}
+ \usepackage{lscape}
+ \usepackage{makecell} 
+ \usepackage{array}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[RE]{\textit{\textbf{\nouppercase{\leftmark}}}}
+\fancyfoot[LO]{\textit{\textbf{\nouppercase{\leftmark}}}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0.4pt} 
+
+
+
+\title{
+    \begin{minipage}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{figures/giu_logo.png}
+    \end{minipage}
+    \vspace{1cm}\\
+   German International University
+   \vspace{0.3cm}\\
+   Faculty of Engineering
+    \vspace{1cm} \\
+    Road Surface Deterioration Detection using ITS, AI, and IoT \\
+    \vspace{1cm}
+    \textbf{By} \\
+    Aditya Prakash Bhagchandani \\
+    \vspace{1cm}
+    \textbf{Under supervision of} \\
+    Dr. Amr Talaat \\
+    \vspace{1cm}
+    January 2025
+}
+
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\include{approval}
+\include{declaration}
+%\include{plagiarism}
+%\include{copyright}
+\include{acknowledgements}
+\include{abstract}
+\tableofcontents
+\listoffigures
+\include{introduction}
+\include{stateoftheart}
+\include{specs}
+\include{implementation}
+%\include{results}
+\include{conclusion}
+\renewcommand{\bibname}{References}
+\bibliographystyle{plain}
+\bibliography{references}
+\appendix
+\include{appendix}
+\end{document}

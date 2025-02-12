@@ -1,0 +1,24 @@
+\chapter{Conclusion and Future Work}
+\section{Conclusion} 
+
+This thesis has presented the possibility of running a light and efficient AI-powered road damage detection system on resource-restricted edge devices such as Raspberry Pi 5 using the ITS-AI-IoT architecture. This proposed solution addresses to the serious challenges of infrastructure monitoring and road maintenance, cost-effectively and scalable. In this study, the deep learning model YOLOv11n-OBB was utilized, which has already been optimized for real-time object detection tasks, exhibiting an mAP50 of 76.819\% with an inference speed of 9.56 FPS and additional FPS have been gained with minium losses in accuracy. This is due to the creation of a strong dataset developed from a combination of RDD2022 and Kaggle pothole data, along with other efficient training and pruning techniques.
+
+The deployed edge-based approach renders the capability of real-time processing and reporting road damages such as longitudinal cracks, transverse cracks, alligator cracks, and potholes. Results confirm that lightweight AI models achieve a good balance between computation efficiency and detection accuracy, hence scalable deployment in urban areas. This research work will contribute significantly to improving road safety and reducing road maintenance costs by using an automated road damage detection and reporting approach.
+
+\section{Future Work} 
+
+Though the results look promising, several limitations are identified and some avenues for improvement are presented below. These will be the basis for future research:
+
+\begin{itemize}
+
+\item Dataset Expansion: The existing model is trained on a dataset that is representative, especially for urban road conditions. The addition of images from a variety of weather conditions, such as rain, fog, or poor illumination and low light or night-time conditions, would increase the generality and robustness of the model.
+
+\item Night Vision and Enviro-Adaptability: Infrared camera technology or low-light imaging can be utilized for improving the performance during poor illuminating conditions. In addition, consideration for extreme weather will make the system adaptable.
+
+\item Highway and Rural Deployment: This system is developed for urban roads with a speed of approximately 60 km/hr. Highways and Rural in future: Implementation on highways and rural regions involves much increased speeds and changing topography, and hence will present new challenges.
+
+\item Severity Analysis: Implements the feature to categorize the road damages in several classes according to the severity. In this manner, the repair assets will be utilized in a much improved manner. Integration with the historic information will enable prediction of when maintenance will be necessitated and the trend.
+     
+\end{itemize}
+
+Addressing these items, the proposed system would expand to become an overall system for road surface monitoring, delivering best value for sustainable infrastructure and citizen safety.

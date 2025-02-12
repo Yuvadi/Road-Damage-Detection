@@ -1,0 +1,1627 @@
+Microsoft Windows [Version 10.0.27764.1000]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+The authenticity of host '192.168.20.108 (192.168.20.108)' can't be established.
+ED25519 key fingerprint is SHA256:8G4oetxBTREEAj6Ozy/6WvegDBM0lNQfw8bWwL7e0uw.
+This host key is known by the following other names/addresses:
+    C:\Users\Aditya/.ssh/known_hosts:6: 192.168.2.161
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.20.108' (ED25519) to the list of known hosts.
+aditya@192.168.20.108's password:
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-1017-raspi aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Wed Jan 15 12:23:07 2025 from 192.168.2.115
+aditya@rdd:~$ cd ~/rddyolo
+aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+Command 'yolo' not found, did you mean:
+  command 'solo' from deb solo1-cli (0.1.1-4)
+  command 'yoyo' from deb yoyo (8.2.0+dfsg1-1)
+  command 'rolo' from deb rolo (019-4)
+Try: sudo apt install <deb name>
+aditya@rdd:~/rddyolo$ source env1/bin/activate
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x480 (no detections), 422.1ms
+Speed: 9.8ms preprocess, 422.1ms inference, 1.0ms postprocess per image at shape (1, 3, 640, 480)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|█
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  38%|███▊      | 1755/4661 [12                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  38%|███▊      | 1755/4661 [12
+Traceback (most recent call last):
+  File "/home/aditya/rddyolo/env1/bin/yolo", line 8, in <module>
+    sys.exit(entrypoint())
+             ^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/cfg/__init__.py", line 983, in entrypoint
+    getattr(model, mode)(**overrides)  # default args from model
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/model.py", line 682, in benchmark
+    return benchmark(
+           ^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/utils/benchmarks.py", line 150, in benchmark
+    results = exported_model.val(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/model.py", line 639, in val
+    validator(model=self.model)
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/validator.py", line 180, in __call__
+    preds = model(batch["img"], augment=augment)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/autobackend.py", line 524, in forward
+    y = self.model(im, augment=augment, visualize=visualize, embed=embed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 114, in forward
+    return self.predict(x, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 132, in predict
+    return self._predict_once(x, profile, visualize, embed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 153, in _predict_once
+    x = m(x)  # run
+        ^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/modules/conv.py", line 55, in forward_fuse
+    return self.act(self.conv(x))
+                    ^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+KeyboardInterrupt
+^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ ^C
+(env1) aditya@rdd:~/rddyolo$ sudo shutdown now
+[sudo] password for aditya:
+
+Broadcast message from root@rdd on pts/1 (Thu 2025-01-16 10:08:47 CET):
+
+The system will power off now!
+
+(env1) aditya@rdd:~/rddyolo$ client_loop: send disconnect: Connection reset
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+aditya@192.168.20.108's password:
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-1017-raspi aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Thu Jan 16 09:53:52 2025 from 192.168.20.50
+aditya@rdd:~$ cd ~/rddyolo
+aditya@rdd:~/rddyolo$ source env1/bin/activate
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+^CTraceback (most recent call last):
+  File "/home/aditya/rddyolo/env1/bin/yolo", line 5, in <module>
+    from ultralytics.cfg import entrypoint
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/__init__.py", line 11, in <module>
+    from ultralytics.models import NAS, RTDETR, SAM, YOLO, FastSAM, YOLOWorld
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/models/__init__.py", line 3, in <module>
+    from .fastsam import FastSAM
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/models/fastsam/__init__.py", line 3, in <module>
+    from .model import FastSAM
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/models/fastsam/model.py", line 5, in <module>
+    from ultralytics.engine.model import Model
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/model.py", line 11, in <module>
+    from ultralytics.cfg import TASK2DATA, get_cfg, get_save_dir
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/cfg/__init__.py", line 12, in <module>
+    from ultralytics.utils import (
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/utils/__init__.py", line 802, in <module>
+    ONLINE = is_online()
+             ^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/utils/__init__.py", line 626, in is_online
+    socket.create_connection(address=(dns, 80), timeout=2.0).close()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+^C
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=(6
+40,640) half=False
+-bash: syntax error near unexpected token `('
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=64
+0 half=False
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x480 (no detections), 635.3ms
+Speed: 39.5ms preprocess, 635.3ms inference, 18.9ms postprocess per image at shape (1, 3, 640, 480)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|█
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [40
+                   all       4661      10748      0.778       0.69       0.76       0.51
+Speed: 3.7ms preprocess, 497.0ms inference, 0.0ms loss, 1.7ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TorchScript: starting export with torch 2.5.1...
+TorchScript: export success ✅ 5.0s, saved as 'weights/last_prune_80_v2.torchscript' (9.1 MB)
+
+Export complete (6.1s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2.torchscript imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2.torchscript imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2.torchscript for TorchScript inference...
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 659.3ms
+Speed: 8.1ms preprocess, 659.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2.torchscript for TorchScript inference...
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [39:12<00:00,  1.98it/s]
+                   all       4661      10748      0.775      0.679      0.746      0.487
+Speed: 2.7ms preprocess, 481.1ms inference, 0.0ms loss, 1.9ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 8.2s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+
+Export complete (9.2s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2.onnx imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2.onnx imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2.onnx for ONNX Runtime inference...
+Using ONNX Runtime CPUExecutionProvider
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 182.3ms
+Speed: 8.6ms preprocess, 182.3ms inference, 2.1ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2.onnx for ONNX Runtime inference...
+Using ONNX Runtime CPUExecutionProvider
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [16:39<00:00,  4.66it/s]
+                   all       4661      10748      0.775      0.679      0.746      0.487
+Speed: 2.8ms preprocess, 182.6ms inference, 0.0ms loss, 7.8ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+OpenVINO: starting export with openvino 2024.6.0-17404-4c0f47d2335-releases/2024/6...
+OpenVINO: export success ✅ 7.7s, saved as 'weights/last_prune_80_v2_openvino_model/' (8.9 MB)
+
+Export complete (8.8s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2_openvino_model imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2_openvino_model imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2_openvino_model for OpenVINO inference...
+Using OpenVINO LATENCY mode for batch=1 inference...
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 84.3ms
+Speed: 10.2ms preprocess, 84.3ms inference, 0.8ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2_openvino_model for OpenVINO inference...
+Using OpenVINO LATENCY mode for batch=1 inference...
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [07:58<00:00,  9.73it/s]
+                   all       4661      10748      0.772       0.68      0.745      0.486
+Speed: 2.4ms preprocess, 78.5ms inference, 0.0ms loss, 2.1ms postprocess per image
+ERROR ❌️ Benchmark failure for TensorRT: inference not supported on CPU
+ERROR ❌️ Benchmark failure for CoreML: CoreML not supported on Python 3.12
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TensorFlow SavedModel: starting export with tensorflow 2.18.0...
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 2.6s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+TensorFlow SavedModel: starting TFLite export with onnx2tf 1.26.3...
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1737024995.859864    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1737024995.860088    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737024997.104898    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737024997.104950    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1737024998.709457    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737024998.709664    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737024999.797469    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737024999.797521    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+TensorFlow SavedModel: export failure ❌ 53.5s: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow SavedModel: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow GraphDef: TensorFlow GraphDef not supported for OBB task
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TensorFlow SavedModel: starting export with tensorflow 2.18.0...
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 2.5s, saved as 'weights/last_prune_80_v2.onnx' (8.8 MB)
+TensorFlow SavedModel: starting TFLite export with onnx2tf 1.26.3...
+I0000 00:00:1737025039.523328    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737025039.523524    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737025040.706384    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737025040.706437    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1737025042.019787    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737025042.020025    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737025043.122221    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737025043.122264    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+TensorFlow SavedModel: export failure ❌ 42.2s: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow Lite: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow Edge TPU: Edge TPU export only supported on non-aarch64 Linux
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TensorFlow SavedModel: starting export with tensorflow 2.18.0...
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 4.7s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+TensorFlow SavedModel: starting TFLite export with onnx2tf 1.26.3...
+I0000 00:00:1737025085.862122    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737025085.862449    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737025087.048465    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737025087.048519    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1737025088.362899    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737025088.363113    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737025089.471694    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737025089.471748    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+TensorFlow SavedModel: export failure ❌ 45.3s: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow.js: No module named 'imp'
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+PaddlePaddle: starting export with X2Paddle 1.6.0...
+INFO:x2paddle.convert:Now translating model from PyTorch to Paddle.
+INFO:x2paddle.convert:Model optimizing ...
+INFO:x2paddle.convert:Model optimized!
+Exporting inference model from python code ('/home/aditya/rddyolo/weights/last_prune_80_v2_paddle_model/x2paddle_code.py')...
+
+I0116 11:58:23.257504  2407 program_interpreter.cc:212] New Executor is Running.
+INFO:x2paddle.convert:Successfully exported Paddle static graph model!
+INFO:x2paddle.convert:================================================
+INFO:x2paddle.convert:
+INFO:x2paddle.convert:Model Converted! Fill this survey to help X2Paddle better, https://iwenjuan.baidu.com/?code=npyd51
+INFO:x2paddle.convert:
+INFO:x2paddle.convert:================================================
+PaddlePaddle: export success ✅ 11.3s, saved as 'weights/last_prune_80_v2_paddle_model/' (17.5 MB)
+
+Export complete (12.4s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2_paddle_model imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2_paddle_model imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2_paddle_model for PaddlePaddle inference...
+--- Running analysis [ir_graph_build_pass]
+I0116 11:58:23.329604  2407 executor.cc:187] Old Executor is Running.
+--- Running analysis [ir_analysis_pass]
+--- Running IR pass [simplify_with_basic_ops_pass]
+--- Running IR pass [layer_norm_fuse_pass]
+--- Running IR pass [attention_lstm_fuse_pass]
+--- Running IR pass [seqconv_eltadd_relu_fuse_pass]
+--- Running IR pass [seqpool_cvm_concat_fuse_pass]
+--- Running IR pass [mul_lstm_fuse_pass]
+--- Running IR pass [fc_gru_fuse_pass]
+--- Running IR pass [mul_gru_fuse_pass]
+--- Running IR pass [seq_concat_fc_fuse_pass]
+--- Running IR pass [gpu_cpu_squeeze2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_reshape2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_flatten2_matmul_fuse_pass]
+--- Running IR pass [matmul_v2_scale_fuse_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_mul_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_matmul_pass]
+I0116 11:58:23.399586  2407 fuse_pass_base.cc:59] ---  detected 2 subgraphs
+--- Running IR pass [matmul_scale_fuse_pass]
+I0116 11:58:23.401914  2407 fuse_pass_base.cc:59] ---  detected 1 subgraphs
+--- Running IR pass [gpu_cpu_map_matmul_to_mul_pass]
+--- Running IR pass [fc_fuse_pass]
+--- Running IR pass [repeated_fc_relu_fuse_pass]
+--- Running IR pass [squared_mat_sub_fuse_pass]
+--- Running IR pass [conv_bn_fuse_pass]
+--- Running IR pass [conv_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [conv_transpose_bn_fuse_pass]
+--- Running IR pass [conv_transpose_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [is_test_pass]
+--- Running IR pass [constant_folding_pass]
+I0116 11:58:23.523105  2407 fuse_pass_base.cc:59] ---  detected 96 subgraphs
+--- Running analysis [save_optimized_model_pass]
+--- Running analysis [ir_params_sync_among_devices_pass]
+--- Running analysis [adjust_cudnn_workspace_size_pass]
+--- Running analysis [inference_op_replace_pass]
+--- Running analysis [ir_graph_to_program_pass]
+I0116 11:58:23.637346  2407 analysis_predictor.cc:1838] ======= optimize end =======
+I0116 11:58:23.640967  2407 naive_executor.cc:200] ---  skip [feed], feed -> x0
+I0116 11:58:23.644973  2407 naive_executor.cc:200] ---  skip [save_infer_model/scale_0.tmp_0], fetch -> fetch
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 630.1ms
+Speed: 9.1ms preprocess, 630.1ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2_paddle_model for PaddlePaddle inference...
+--- Running analysis [ir_graph_build_pass]
+--- Running analysis [ir_analysis_pass]
+--- Running IR pass [simplify_with_basic_ops_pass]
+--- Running IR pass [layer_norm_fuse_pass]
+--- Running IR pass [attention_lstm_fuse_pass]
+--- Running IR pass [seqconv_eltadd_relu_fuse_pass]
+--- Running IR pass [seqpool_cvm_concat_fuse_pass]
+--- Running IR pass [mul_lstm_fuse_pass]
+--- Running IR pass [fc_gru_fuse_pass]
+--- Running IR pass [mul_gru_fuse_pass]
+--- Running IR pass [seq_concat_fc_fuse_pass]
+--- Running IR pass [gpu_cpu_squeeze2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_reshape2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_flatten2_matmul_fuse_pass]
+--- Running IR pass [matmul_v2_scale_fuse_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_mul_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_matmul_pass]
+I0116 11:58:24.380465  2407 fuse_pass_base.cc:59] ---  detected 2 subgraphs
+--- Running IR pass [matmul_scale_fuse_pass]
+I0116 11:58:24.382333  2407 fuse_pass_base.cc:59] ---  detected 1 subgraphs
+--- Running IR pass [gpu_cpu_map_matmul_to_mul_pass]
+--- Running IR pass [fc_fuse_pass]
+--- Running IR pass [repeated_fc_relu_fuse_pass]
+--- Running IR pass [squared_mat_sub_fuse_pass]
+--- Running IR pass [conv_bn_fuse_pass]
+--- Running IR pass [conv_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [conv_transpose_bn_fuse_pass]
+--- Running IR pass [conv_transpose_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [is_test_pass]
+--- Running IR pass [constant_folding_pass]
+I0116 11:58:24.502743  2407 fuse_pass_base.cc:59] ---  detected 96 subgraphs
+--- Running analysis [save_optimized_model_pass]
+--- Running analysis [ir_params_sync_among_devices_pass]
+--- Running analysis [adjust_cudnn_workspace_size_pass]
+--- Running analysis [inference_op_replace_pass]
+--- Running analysis [ir_graph_to_program_pass]
+I0116 11:58:24.607535  2407 analysis_predictor.cc:1838] ======= optimize end =======
+I0116 11:58:24.629413  2407 naive_executor.cc:200] ---  skip [feed], feed -> x0
+I0116 11:58:24.632815  2407 naive_executor.cc:200] ---  skip [save_infer_model/scale_0.tmp_0], fetch -> fetch
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [44:42<00:00,  1.74it/s]
+                   all       4661      10748      0.775      0.679      0.746      0.487
+Speed: 2.8ms preprocess, 551.0ms inference, 0.0ms loss, 1.9ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 2.7s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+Can't open file:/sys/devices/system/cpu/cpufreq/ondemand/affected_cpus
+CPU Group: [ 0  1  2  3 ], 1500000 - 2400000
+The device supports: i8sdot:1, fp16:1, i8mm: 0, sve2: 0
+Can't open file:/sys/devices/system/cpu/cpufreq/ondemand/affected_cpus
+CPU Group: [ 0  1  2  3 ], 1500000 - 2400000
+The device supports: i8sdot:1, fp16:1, i8mm: 0, sve2: 0
+
+MNN: starting export with MNN 3.0.3...
+Start to Convert Other Model Format To MNN Model..., target version: 3
+[12:43:12] :46: ONNX Model ir version: 9
+[12:43:12] :47: ONNX Model opset version: 19
+[12:43:12] :146: Check it out ==> /model.11/Resize_output_0 has empty input, the index is 1
+[12:43:12] :146: Check it out ==> /model.14/Resize_output_0 has empty input, the index is 1
+Start to Optimize the MNN Net...
+inputTensors : [ images, ]
+outputTensors: [ output0, ]
+Converted Success!
+MNN: export success ✅ 4.2s, saved as 'weights/last_prune_80_v2.mnn' (8.6 MB)
+
+Export complete (5.2s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2.mnn imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2.mnn imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2.mnn for MNN inference...
+MNN use low precision
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 111.6ms
+Speed: 8.7ms preprocess, 111.6ms inference, 0.7ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2.mnn for MNN inference...
+MNN use low precision
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  34%|███▍      | 1598/4661 [03:20<06:27,  7.91it/s]client_loop: send disconnect: Connection reset
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+ssh: connect to host 192.168.20.108 port 22: Connection timed out
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+aditya@192.168.20.108's password:
+Permission denied, please try again.
+aditya@192.168.20.108's password:
+Connection reset by 192.168.20.108 port 22
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+ssh: connect to host 192.168.20.108 port 22: Connection aborted
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+aditya@192.168.20.108's password:
+Permission denied, please try again.
+aditya@192.168.20.108's password:
+Permission denied, please try again.
+aditya@192.168.20.108's password:
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-1017-raspi aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Thu Jan 16 10:09:31 2025 from 192.168.20.50
+aditya@rdd:~$ cd ~/rddyolo
+aditya@rdd:~/rddyolo$ source env1/bin/activate
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x480 (no detections), 958.2ms
+Speed: 14.3ms preprocess, 958.2ms inference, 1.4ms postprocess per image at shape (1, 3, 640, 480)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/4661 [00:00<?, ?it/s]client_loop: send disconnect: Connection reset
+
+C:\Users\Aditya>ssh aditya@192.168.20.108
+aditya@192.168.20.108's password:
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-1017-raspi aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Thu Jan 16 12:48:17 2025 from 192.168.20.50
+aditya@rdd:~$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+Command 'yolo' not found, did you mean:
+  command 'yoyo' from deb yoyo (8.2.0+dfsg1-1)
+  command 'rolo' from deb rolo (019-4)
+  command 'solo' from deb solo1-cli (0.1.1-4)
+Try: sudo apt install <deb name>
+aditya@rdd:~$ cd ~/rddyolo
+aditya@rdd:~/rddyolo$ source env1/bin/activate
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x480 (no detections), 1476.0ms
+Speed: 15.3ms preprocess, 1476.0ms inference, 1.6ms postprocess per image at shape (1, 3, 640, 480)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 15/4661 [00:19<1:38:55,  1.28s/it]^C
+Traceback (most recent call last):
+  File "/home/aditya/rddyolo/env1/bin/yolo", line 8, in <module>
+    sys.exit(entrypoint())
+             ^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/cfg/__init__.py", line 983, in entrypoint
+    getattr(model, mode)(**overrides)  # default args from model
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/model.py", line 682, in benchmark
+    return benchmark(
+           ^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/utils/benchmarks.py", line 150, in benchmark
+    results = exported_model.val(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/model.py", line 639, in val
+    validator(model=self.model)
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/engine/validator.py", line 180, in __call__
+    preds = model(batch["img"], augment=augment)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/autobackend.py", line 524, in forward
+    y = self.model(im, augment=augment, visualize=visualize, embed=embed)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 114, in forward
+    return self.predict(x, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 132, in predict
+    return self._predict_once(x, profile, visualize, embed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 153, in _predict_once
+    x = m(x)  # run
+        ^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/modules/block.py", line 240, in forward
+    return self.cv2(torch.cat(y, 1))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/nn/modules/conv.py", line 55, in forward_fuse
+    return self.act(self.conv(x))
+                    ^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/rddyolo/env1/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+KeyboardInterrupt
+^C
+(env1) aditya@rdd:~/rddyolo$ sudo shutdown now
+[sudo] password for aditya:
+
+Broadcast message from root@rdd on pts/3 (Thu 2025-01-16 12:55:35 CET):
+
+The system will power off now!
+
+(env1) aditya@rdd:~/rddyolo$ client_loop: send disconnect: Connection reset
+
+C:\Users\Aditya>ssh aditya@192.168.137.173
+The authenticity of host '192.168.137.173 (192.168.137.173)' can't be established.
+ED25519 key fingerprint is SHA256:8G4oetxBTREEAj6Ozy/6WvegDBM0lNQfw8bWwL7e0uw.
+This host key is known by the following other names/addresses:
+    C:\Users\Aditya/.ssh/known_hosts:6: 192.168.2.161
+    C:\Users\Aditya/.ssh/known_hosts:9: 192.168.20.108
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.137.173' (ED25519) to the list of known hosts.
+aditya@192.168.137.173's password:
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-1017-raspi aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Thu Jan 16 12:49:16 2025 from 192.168.20.50
+aditya@rdd:~$ cd ~/rddyolo
+aditya@rdd:~/rddyolo$ source env1/bin/activate
+(env1) aditya@rdd:~/rddyolo$ yolo benchmark model=weights/last_prune_80_v2.pt data='Balanced-Dataset/data.yaml' imgsz=640 half=False
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x480 (no detections), 633.3ms
+Speed: 39.1ms preprocess, 633.3ms inference, 18.9ms postprocess per image at shape (1, 3, 640, 480)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [40:08<00:00,  1.94it/s]
+                   all       4661      10748      0.778       0.69       0.76       0.51
+Speed: 2.7ms preprocess, 490.0ms inference, 0.0ms loss, 1.7ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TorchScript: starting export with torch 2.5.1...
+TorchScript: export success ✅ 4.8s, saved as 'weights/last_prune_80_v2.torchscript' (9.1 MB)
+
+Export complete (5.9s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2.torchscript imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2.torchscript imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2.torchscript for TorchScript inference...
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 653.6ms
+Speed: 7.7ms preprocess, 653.6ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2.torchscript for TorchScript inference...
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [39:34<00:00,  1.96it/s]
+                   all       4661      10748      0.775      0.679      0.746      0.487
+Speed: 2.8ms preprocess, 485.2ms inference, 0.0ms loss, 1.9ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 3.2s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+
+Export complete (4.3s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2.onnx imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2.onnx imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2.onnx for ONNX Runtime inference...
+Using ONNX Runtime CPUExecutionProvider
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 185.3ms
+Speed: 8.2ms preprocess, 185.3ms inference, 1.6ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2.onnx for ONNX Runtime inference...
+Using ONNX Runtime CPUExecutionProvider
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [16:34<00:00,  4.69it/s]
+                   all       4661      10748      0.775      0.679      0.746      0.487
+Speed: 2.8ms preprocess, 181.2ms inference, 0.0ms loss, 7.9ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+OpenVINO: starting export with openvino 2024.6.0-17404-4c0f47d2335-releases/2024/6...
+OpenVINO: export success ✅ 7.3s, saved as 'weights/last_prune_80_v2_openvino_model/' (8.9 MB)
+
+Export complete (8.4s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2_openvino_model imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2_openvino_model imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2_openvino_model for OpenVINO inference...
+Using OpenVINO LATENCY mode for batch=1 inference...
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 85.8ms
+Speed: 11.5ms preprocess, 85.8ms inference, 0.9ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2_openvino_model for OpenVINO inference...
+Using OpenVINO LATENCY mode for batch=1 inference...
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [08:11<00:00,  9.49it/s]
+                   all       4661      10748      0.772       0.68      0.745      0.486
+Speed: 2.6ms preprocess, 80.0ms inference, 0.0ms loss, 2.1ms postprocess per image
+ERROR ❌️ Benchmark failure for TensorRT: inference not supported on CPU
+ERROR ❌️ Benchmark failure for CoreML: CoreML not supported on Python 3.12
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TensorFlow SavedModel: starting export with tensorflow 2.18.0...
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 2.6s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+TensorFlow SavedModel: starting TFLite export with onnx2tf 1.26.3...
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1737036453.605426    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1737036453.605639    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737036454.823710    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737036454.823770    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1737036456.435296    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737036456.435502    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737036457.537844    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737036457.537893    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+TensorFlow SavedModel: export failure ❌ 54.1s: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow SavedModel: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow GraphDef: TensorFlow GraphDef not supported for OBB task
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TensorFlow SavedModel: starting export with tensorflow 2.18.0...
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 2.6s, saved as 'weights/last_prune_80_v2.onnx' (8.8 MB)
+TensorFlow SavedModel: starting TFLite export with onnx2tf 1.26.3...
+I0000 00:00:1737036497.957444    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737036497.957674    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737036499.147341    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737036499.147404    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1737036500.458577    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737036500.458826    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737036501.579442    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737036501.579502    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+TensorFlow SavedModel: export failure ❌ 43.0s: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow Lite: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow Edge TPU: Edge TPU export only supported on non-aarch64 Linux
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TensorFlow SavedModel: starting export with tensorflow 2.18.0...
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 3.1s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+TensorFlow SavedModel: starting TFLite export with onnx2tf 1.26.3...
+I0000 00:00:1737036543.293558    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737036543.293869    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737036544.495073    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737036544.495126    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+I0000 00:00:1737036545.786720    2407 devices.cc:76] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA or ROCm support)
+I0000 00:00:1737036545.786954    2407 single_machine.cc:361] Starting new session
+W0000 00:00:1737036546.917755    2407 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1737036546.917821    2407 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+TensorFlow SavedModel: export failure ❌ 44.3s: No module named 'imp'
+ERROR ❌️ Benchmark failure for TensorFlow.js: No module named 'imp'
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+PaddlePaddle: starting export with X2Paddle 1.6.0...
+INFO:x2paddle.convert:Now translating model from PyTorch to Paddle.
+INFO:x2paddle.convert:Model optimizing ...
+INFO:x2paddle.convert:Model optimized!
+Exporting inference model from python code ('/home/aditya/rddyolo/weights/last_prune_80_v2_paddle_model/x2paddle_code.py')...
+
+I0116 15:09:22.682184  2407 program_interpreter.cc:212] New Executor is Running.
+INFO:x2paddle.convert:Successfully exported Paddle static graph model!
+INFO:x2paddle.convert:================================================
+INFO:x2paddle.convert:
+INFO:x2paddle.convert:Model Converted! Fill this survey to help X2Paddle better, https://iwenjuan.baidu.com/?code=npyd51
+INFO:x2paddle.convert:
+INFO:x2paddle.convert:================================================
+PaddlePaddle: export success ✅ 13.9s, saved as 'weights/last_prune_80_v2_paddle_model/' (17.5 MB)
+
+Export complete (15.0s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2_paddle_model imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2_paddle_model imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2_paddle_model for PaddlePaddle inference...
+--- Running analysis [ir_graph_build_pass]
+I0116 15:09:24.582697  2407 executor.cc:187] Old Executor is Running.
+--- Running analysis [ir_analysis_pass]
+--- Running IR pass [simplify_with_basic_ops_pass]
+--- Running IR pass [layer_norm_fuse_pass]
+--- Running IR pass [attention_lstm_fuse_pass]
+--- Running IR pass [seqconv_eltadd_relu_fuse_pass]
+--- Running IR pass [seqpool_cvm_concat_fuse_pass]
+--- Running IR pass [mul_lstm_fuse_pass]
+--- Running IR pass [fc_gru_fuse_pass]
+--- Running IR pass [mul_gru_fuse_pass]
+--- Running IR pass [seq_concat_fc_fuse_pass]
+--- Running IR pass [gpu_cpu_squeeze2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_reshape2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_flatten2_matmul_fuse_pass]
+--- Running IR pass [matmul_v2_scale_fuse_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_mul_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_matmul_pass]
+I0116 15:09:24.652803  2407 fuse_pass_base.cc:59] ---  detected 2 subgraphs
+--- Running IR pass [matmul_scale_fuse_pass]
+I0116 15:09:24.655067  2407 fuse_pass_base.cc:59] ---  detected 1 subgraphs
+--- Running IR pass [gpu_cpu_map_matmul_to_mul_pass]
+--- Running IR pass [fc_fuse_pass]
+--- Running IR pass [repeated_fc_relu_fuse_pass]
+--- Running IR pass [squared_mat_sub_fuse_pass]
+--- Running IR pass [conv_bn_fuse_pass]
+--- Running IR pass [conv_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [conv_transpose_bn_fuse_pass]
+--- Running IR pass [conv_transpose_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [is_test_pass]
+--- Running IR pass [constant_folding_pass]
+I0116 15:09:24.775945  2407 fuse_pass_base.cc:59] ---  detected 96 subgraphs
+--- Running analysis [save_optimized_model_pass]
+--- Running analysis [ir_params_sync_among_devices_pass]
+--- Running analysis [adjust_cudnn_workspace_size_pass]
+--- Running analysis [inference_op_replace_pass]
+--- Running analysis [ir_graph_to_program_pass]
+I0116 15:09:24.892474  2407 analysis_predictor.cc:1838] ======= optimize end =======
+I0116 15:09:24.896373  2407 naive_executor.cc:200] ---  skip [feed], feed -> x0
+I0116 15:09:24.900370  2407 naive_executor.cc:200] ---  skip [save_infer_model/scale_0.tmp_0], fetch -> fetch
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 628.3ms
+Speed: 9.2ms preprocess, 628.3ms inference, 0.8ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2_paddle_model for PaddlePaddle inference...
+--- Running analysis [ir_graph_build_pass]
+--- Running analysis [ir_analysis_pass]
+--- Running IR pass [simplify_with_basic_ops_pass]
+--- Running IR pass [layer_norm_fuse_pass]
+--- Running IR pass [attention_lstm_fuse_pass]
+--- Running IR pass [seqconv_eltadd_relu_fuse_pass]
+--- Running IR pass [seqpool_cvm_concat_fuse_pass]
+--- Running IR pass [mul_lstm_fuse_pass]
+--- Running IR pass [fc_gru_fuse_pass]
+--- Running IR pass [mul_gru_fuse_pass]
+--- Running IR pass [seq_concat_fc_fuse_pass]
+--- Running IR pass [gpu_cpu_squeeze2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_reshape2_matmul_fuse_pass]
+--- Running IR pass [gpu_cpu_flatten2_matmul_fuse_pass]
+--- Running IR pass [matmul_v2_scale_fuse_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_mul_pass]
+--- Running IR pass [gpu_cpu_map_matmul_v2_to_matmul_pass]
+I0116 15:09:25.635962  2407 fuse_pass_base.cc:59] ---  detected 2 subgraphs
+--- Running IR pass [matmul_scale_fuse_pass]
+I0116 15:09:25.637892  2407 fuse_pass_base.cc:59] ---  detected 1 subgraphs
+--- Running IR pass [gpu_cpu_map_matmul_to_mul_pass]
+--- Running IR pass [fc_fuse_pass]
+--- Running IR pass [repeated_fc_relu_fuse_pass]
+--- Running IR pass [squared_mat_sub_fuse_pass]
+--- Running IR pass [conv_bn_fuse_pass]
+--- Running IR pass [conv_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [conv_transpose_bn_fuse_pass]
+--- Running IR pass [conv_transpose_eltwiseadd_bn_fuse_pass]
+--- Running IR pass [is_test_pass]
+--- Running IR pass [constant_folding_pass]
+I0116 15:09:25.758503  2407 fuse_pass_base.cc:59] ---  detected 96 subgraphs
+--- Running analysis [save_optimized_model_pass]
+--- Running analysis [ir_params_sync_among_devices_pass]
+--- Running analysis [adjust_cudnn_workspace_size_pass]
+--- Running analysis [inference_op_replace_pass]
+--- Running analysis [ir_graph_to_program_pass]
+I0116 15:09:25.869936  2407 analysis_predictor.cc:1838] ======= optimize end =======
+I0116 15:09:25.885073  2407 naive_executor.cc:200] ---  skip [feed], feed -> x0
+I0116 15:09:25.888643  2407 naive_executor.cc:200] ---  skip [save_infer_model/scale_0.tmp_0], fetch -> fetch
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [44:46<00:00,  1.73it/s]
+                   all       4661      10748      0.775      0.679      0.746      0.487
+Speed: 2.7ms preprocess, 552.0ms inference, 0.0ms loss, 2.0ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+ONNX: starting export with onnx 1.17.0 opset 19...
+ONNX: slimming with onnxslim 0.1.47...
+ONNX: export success ✅ 2.7s, saved as 'weights/last_prune_80_v2.onnx' (8.7 MB)
+Can't open file:/sys/devices/system/cpu/cpufreq/ondemand/affected_cpus
+CPU Group: [ 0  1  2  3 ], 1500000 - 2400000
+The device supports: i8sdot:1, fp16:1, i8mm: 0, sve2: 0
+Can't open file:/sys/devices/system/cpu/cpufreq/ondemand/affected_cpus
+CPU Group: [ 0  1  2  3 ], 1500000 - 2400000
+The device supports: i8sdot:1, fp16:1, i8mm: 0, sve2: 0
+
+MNN: starting export with MNN 3.0.3...
+Start to Convert Other Model Format To MNN Model..., target version: 3
+[15:54:22] :46: ONNX Model ir version: 9
+[15:54:22] :47: ONNX Model opset version: 19
+[15:54:22] :146: Check it out ==> /model.11/Resize_output_0 has empty input, the index is 1
+[15:54:22] :146: Check it out ==> /model.14/Resize_output_0 has empty input, the index is 1
+Start to Optimize the MNN Net...
+inputTensors : [ images, ]
+outputTensors: [ output0, ]
+Converted Success!
+MNN: export success ✅ 8.9s, saved as 'weights/last_prune_80_v2.mnn' (8.6 MB)
+
+Export complete (9.9s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2.mnn imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2.mnn imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2.mnn for MNN inference...
+MNN use low precision
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 112.3ms
+Speed: 10.6ms preprocess, 112.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2.mnn for MNN inference...
+MNN use low precision
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [10:23<00:00,  7.48it/s]
+                   all       4661      10748      0.774      0.678      0.746      0.486
+Speed: 2.5ms preprocess, 109.7ms inference, 0.0ms loss, 2.0ms postprocess per image
+
+PyTorch: starting from 'weights/last_prune_80_v2.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 9, 8400) (19.2 MB)
+
+TorchScript: starting export with torch 2.5.1...
+TorchScript: export success ✅ 4.8s, saved as 'weights/last_prune_80_v2.torchscript' (9.1 MB)
+
+NCNN: starting export with NCNN 1.0.20241226...
+NCNN: running '/home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/pnnx weights/last_prune_80_v2.torchscript ncnnparam=weights/last_prune_80_v2_ncnn_model/model.ncnn.param ncnnbin=weights/last_prune_80_v2_ncnn_model/model.ncnn.bin ncnnpy=weights/last_prune_80_v2_ncnn_model/model_ncnn.py pnnxparam=weights/last_prune_80_v2_ncnn_model/model.pnnx.param pnnxbin=weights/last_prune_80_v2_ncnn_model/model.pnnx.bin pnnxpy=weights/last_prune_80_v2_ncnn_model/model_pnnx.py pnnxonnx=weights/last_prune_80_v2_ncnn_model/model.pnnx.onnx fp16=0 device=cpu inputshape="[1, 3, 640, 640]"'
+pnnxparam = weights/last_prune_80_v2_ncnn_model/model.pnnx.param
+pnnxbin = weights/last_prune_80_v2_ncnn_model/model.pnnx.bin
+pnnxpy = weights/last_prune_80_v2_ncnn_model/model_pnnx.py
+pnnxonnx = weights/last_prune_80_v2_ncnn_model/model.pnnx.onnx
+ncnnparam = weights/last_prune_80_v2_ncnn_model/model.ncnn.param
+ncnnbin = weights/last_prune_80_v2_ncnn_model/model.ncnn.bin
+ncnnpy = weights/last_prune_80_v2_ncnn_model/model_ncnn.py
+fp16 = 0
+optlevel = 2
+device = cpu
+inputshape = [1,3,640,640]f32
+inputshape2 =
+customop =
+moduleop =
+get inputshape from traced inputs
+inputshape = [1,3,640,640]f32
+Error in cpuinfo: prctl(PR_SVE_GET_VL) failed
+############# pass_level0
+inline module = torch.nn.modules.linear.Identity
+inline module = ultralytics.nn.modules.block.Attention
+inline module = ultralytics.nn.modules.block.Bottleneck
+inline module = ultralytics.nn.modules.block.C2PSA
+inline module = ultralytics.nn.modules.block.C3k
+inline module = ultralytics.nn.modules.block.C3k2
+inline module = ultralytics.nn.modules.block.DFL
+inline module = ultralytics.nn.modules.block.PSABlock
+inline module = ultralytics.nn.modules.block.SPPF
+inline module = ultralytics.nn.modules.conv.Concat
+inline module = ultralytics.nn.modules.conv.Conv
+inline module = ultralytics.nn.modules.conv.DWConv
+inline module = ultralytics.nn.modules.head.OBB
+inline module = torch.nn.modules.linear.Identity
+inline module = ultralytics.nn.modules.block.Attention
+inline module = ultralytics.nn.modules.block.Bottleneck
+inline module = ultralytics.nn.modules.block.C2PSA
+inline module = ultralytics.nn.modules.block.C3k
+inline module = ultralytics.nn.modules.block.C3k2
+inline module = ultralytics.nn.modules.block.DFL
+inline module = ultralytics.nn.modules.block.PSABlock
+inline module = ultralytics.nn.modules.block.SPPF
+inline module = ultralytics.nn.modules.conv.Concat
+inline module = ultralytics.nn.modules.conv.Conv
+inline module = ultralytics.nn.modules.conv.DWConv
+inline module = ultralytics.nn.modules.head.OBB
+
+----------------
+
+############# pass_level1
+############# pass_level2
+############# pass_level3
+############# pass_level4
+############# pass_level5
+############# pass_ncnn
+NCNN: export success ✅ 3.3s, saved as 'weights/last_prune_80_v2_ncnn_model' (8.7 MB)
+
+Export complete (9.2s)
+Results saved to /home/aditya/rddyolo/weights
+Predict:         yolo predict task=obb model=weights/last_prune_80_v2_ncnn_model imgsz=640
+Validate:        yolo val task=obb model=weights/last_prune_80_v2_ncnn_model imgsz=640 data=Balanced-Dataset\data.yaml
+Visualize:       https://netron.app
+Loading weights/last_prune_80_v2_ncnn_model for NCNN inference...
+
+image 1/1 /home/aditya/rddyolo/env1/lib/python3.12/site-packages/ultralytics/assets/bus.jpg: 640x640 (no detections), 110.1ms
+Speed: 8.5ms preprocess, 110.1ms inference, 0.7ms postprocess per image at shape (1, 3, 640, 640)
+Loading weights/last_prune_80_v2_ncnn_model for NCNN inference...
+Setting batch=1 input of shape (1, 3, 640, 640)
+val: Scanning /home/aditya/rddyolo/Balanced-Dataset/val/labels.cache... 4661 images, 1516 backgrounds, 0 corrupt: 100%|██████████| 4661/4661 [00:00<?, ?it/s
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011603.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011614.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011664.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011769.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011876.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0011986.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064409.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064416.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064417.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064419.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064432.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064433.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064438.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064442.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064490.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064517.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064520.jpg: 7 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064522.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064523.jpg: 6 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064525.jpg: 8 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064527.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064529.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064530.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064535.jpg: 4 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064538.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064547.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064561.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064576.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064631.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064724.jpg: 3 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064779.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064850.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064861.jpg: 1 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0064867.jpg: 5 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0307782.jpg: 2 duplicate labels removed
+val: WARNING ⚠️ /home/aditya/rddyolo/Balanced-Dataset/val/images/G0459767.jpg: 2 duplicate labels removed
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  30%|███       | 1400/4661 [02:48<06:53,  7.89it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4661/4661 [09:56<00:00,  7.82it/s]
+                   all       4661      10748      0.772      0.677      0.746      0.486
+Speed: 2.5ms preprocess, 103.5ms inference, 0.0ms loss, 2.0ms postprocess per image
+ERROR ❌️ Benchmark failure for IMX: IMX only supported for detection task
+Setup complete ✅ (4 CPUs, 7.8 GB RAM, 26.8/28.7 GB disk)
+
+Benchmarks complete for last_prune_80_v2.pt on Balanced-Dataset/data.yaml at imgsz=640 (10384.33s)
+                   Format Status❔  Size (MB)  metrics/mAP50-95(B)  Inference time (ms/im)    FPS
+0                 PyTorch       ✅       19.2               0.5104                  489.97   2.04
+1             TorchScript       ✅        9.1               0.4872                  485.25   2.06
+2                    ONNX       ✅        8.7               0.4872                  181.20   5.52
+3                OpenVINO       ✅        8.9               0.4864                   79.97  12.50
+4                TensorRT       ❌        0.0                  NaN                     NaN    NaN
+5                  CoreML       ❌        0.0                  NaN                     NaN    NaN
+6   TensorFlow SavedModel       ❌        0.0                  NaN                     NaN    NaN
+7     TensorFlow GraphDef       ❌        0.0                  NaN                     NaN    NaN
+8         TensorFlow Lite       ❌        0.0                  NaN                     NaN    NaN
+9     TensorFlow Edge TPU       ❌        0.0                  NaN                     NaN    NaN
+10          TensorFlow.js       ❌        0.0                  NaN                     NaN    NaN
+11           PaddlePaddle       ✅       17.5               0.4872                  552.02   1.81
+12                    MNN       ✅        8.6               0.4862                  109.70   9.12
+13                   NCNN       ✅        8.7               0.4865                  103.49   9.66
+14                    IMX       ❌        0.0                  NaN                     NaN    NaN
+
+💡 Learn more at https://docs.ultralytics.com/modes/benchmark
+(env1) aditya@rdd:~/rddyolo$
+(env1) aditya@rdd:~/rddyolo$ sudo shutdown now
+[sudo] password for aditya:
+
+Broadcast message from root@rdd on pts/1 (Thu 2025-01-16 16:21:42 CET):
+
+The system will power off now!
+
+(env1) aditya@rdd:~/rddyolo$ client_loop: send disconnect: Connection reset
+
+C:\Users\Aditya>

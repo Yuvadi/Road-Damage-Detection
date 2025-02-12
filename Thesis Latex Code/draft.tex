@@ -1,0 +1,201 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{
+    \includegraphics[width=0.8\textwidth]{giu_logo.png}  
+    \vspace{1cm} \\
+    Road Surface Deterioration using ITS, AI, and IoT \\
+    \vspace{1cm}
+    \textbf{By} \\
+    Aditya Prakash Bhagchandani \\
+    \vspace{1cm}
+    \textbf{Under supervision of} \\
+    Dr. Amr Talaat \\
+    \textbf{Co-supervised by} \\
+    Dr. Khaled Tolba \\
+    \vspace{1cm}
+    January 2025
+}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Examination Committee}
+\vspace{2cm}
+\section*{Supervisors:}
+\vspace{0.2cm}
+\subsection*{Dr.Amr Talaat}
+\subsection*{Dr.Khaled Tolba}
+\vspace{2cm}
+\section*{Examiners:}
+\vspace{0.5cm}
+\subsection*{Dr.Amr Talaat}
+\subsection*{Dr.Khaled Tolba}
+
+
+\newpage
+\section*{Aprroval Sheet}
+\subsection*{Name: Aditya Prakash Bhagchandani}
+\subsection*{Faculty: Engineering}
+\subsection*{Program: Robotics and Automation Engineering}
+\subsection*{Thesis title: Road Surface Deterioration using ITS, AI, and IoT}
+\vspace{1cm}
+\large This thesis has been approved in partial fulfillment of the degree of Bachelors of Science in
+Robotics and Automation Engineering awarded by the Faculty of Engineering at the German International
+University.
+\vspace{1cm}
+\section*{Examiners:}
+\vspace{0.3cm}
+\subsection*{Dr.Amr Talaat}
+\vspace{0.3cm}
+\textbf{Date:}
+\hspace{4cm}
+\textbf{Signature:}
+\subsection*{Dr.Khaled Tolba}
+\vspace{0.3cm}
+\textbf{Date:}
+\hspace{4cm}
+\textbf{Signature:}
+
+\newpage
+\section*{Declaration}
+I certify that this project work titled \textbf{\textquotedblleft Road Surface Deterioration Using ITS, AI, and IoT\textquotedblright} is my own work. The work has not been presented elsewhere for assessment. The materials that have been used from other sources have been properly acknowledged/cited.
+\vspace{2cm}
+\section*{Author}
+\textbf{Aditya Prakash Bhagchandani}
+
+\newpage
+\section*{Plagiarism Certificate (Similarity Report)}
+This project report has been checked for Plagiarism. A similarity report, endorsed by the Supervisor(s), is attached.
+\vspace{2cm}
+\section*{Author}
+\textbf{Aditya Prakash Bhagchandani}
+\vspace{2cm}
+\textbf{Signature of Supervisor(s)}
+
+\newpage
+\section*{Copyright Statement}
+\begin{itemize}
+    \item Copyright in the text of this project report rests with the student authors. Copies (by any process) either in full, or of extracts, may be made only in accordance with instructions given by the authors and lodged in the Library of GIU. Details may be obtained by the Librarian. This page must form part of any such copies made. Further copies (by any process) may not be made without the permission (in writing) of the authors.
+    \item The ownership of any intellectual property rights which may be described in this project report is vested in GIU’s Departments of Electrical \& Mechanical Engineering, subject to any prior agreement to the contrary, and may not be made available for use by third parties without the written permission of the GIU’s Departments of Electrical \& Mechanical Engineering, which will prescribe the terms and conditions of any such agreement.
+    \item Further information on the conditions under which disclosures and exploitation may take place is available from the Library of GIU, Egypt.
+\end{itemize}
+
+\newpage
+\section*{Acknowledgements}
+This page can be used to acknowledge any technical or financial support and collaboration with academic, industrial, or funding partners, support from the supervisor, other faculty members, and/or other fellow students. Students may also include acknowledgements of family members. Font, line spacing, and page margins must not be changed throughout this section and other sections in the report. Example texts for acknowledgements are given below.
+
+\vspace{2cm}
+
+Aditya Prakash Bhagchandani
+
+\newpage
+\begin{abstract}
+Road surface deterioration, including cracks and potholes, poses a significant challenge to transportation infrastructure, impacting safety and increasing maintenance costs. This thesis explores an innovative approach leveraging Intelligent Transportation Systems (ITS), Artificial Intelligence (AI), and the Internet of Things (IoT) to enable efficient and scalable road damage detection. The research focuses on deploying the lightweight YOLO11n-OBB model on a Raspberry Pi 5 integrated with the HALO KIT, achieving real-time detection capabilities on resource-constrained edge devices. Techniques such as model pruning are employed to enhance computational efficiency without compromising detection accuracy. Experimental results demonstrate the system's robustness across diverse road conditions, providing a practical, cost-effective solution for road infrastructure management. This work bridges the gap between cutting-edge AI models and real-world applications, paving the way for smarter infrastructure maintenance in urban and rural settings.
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+Road infrastructure is vital for economic development and public safety. However, road surface deterioration, such as cracks and potholes, leads to increased maintenance costs and safety hazards. This thesis addresses the need for efficient and scalable road damage detection using modern technologies like ITS, AI, and IoT. By deploying a lightweight model on edge devices, this work aims to bridge the gap between theoretical advancements in computer vision and practical deployment in resource-constrained environments.
+
+\section{Problem Statement}
+Traditional road maintenance relies heavily on manual inspections, which are time-consuming and resource-intensive. Automated solutions often require significant computational resources, limiting their application on cost-effective and portable devices.
+
+\section{Objectives}
+This research aims to:
+\begin{itemize}
+    \item Develop an efficient road damage detection system leveraging YOLO11n-OBB.
+    \item Deploy the model on a Raspberry Pi 5 with HALO KIT for real-time inference.
+    \item Optimize the model using pruning techniques to maintain accuracy while reducing computational load.
+    \item Validate the system's performance across diverse road conditions.
+\end{itemize}
+
+\chapter{Literature Review}
+\section{Existing Road Damage Detection Techniques}
+Traditional methods, including manual surveys and semi-automated techniques, are labor-intensive and costly. Recent advancements in computer vision, such as the use of deep learning models like YOLO and RetinaNet, have shown promise in automating this process.
+
+\section{Limitations of Current Approaches}
+Despite their success, these models typically require high computational resources, such as GPUs, for real-time operation. This limitation poses challenges for deploying these solutions in low-power, cost-effective edge environments.
+
+\chapter{Methodology}
+\section{System Design}
+The proposed system integrates the YOLO11n-OBB model with a Raspberry Pi 5 and HALO KIT. This compact setup is designed to:
+\begin{itemize}
+    \item Capture road images using connected cameras.
+    \item Process images locally to detect road damage in real-time.
+    \item Transmit detection results via IoT-enabled connectivity for centralized monitoring.
+\end{itemize}
+
+\section{Model Optimization}
+To address computational constraints, pruning techniques are applied to reduce the model's size and inference time without significantly impacting performance.
+
+\chapter{Implementation}
+\section{Hardware Setup}
+The hardware comprises:
+\begin{itemize}
+    \item Raspberry Pi 5 for edge computing.
+    \item HALO KIT for IoT connectivity and enhanced processing.
+    \item Camera module for capturing road images.
+\end{itemize}
+
+\section{Software Configuration}
+The YOLO11n-OBB model is trained and optimized using PyTorch. The Raspberry Pi runs a lightweight version of the trained model to ensure real-time processing.
+
+\chapter{Results and Discussion}
+\section{Performance Metrics}
+The system is evaluated based on:
+\begin{itemize}
+    \item Precision and recall for damage detection.
+    \item Inference speed and resource utilization on the Raspberry Pi.
+\end{itemize}
+
+\section{Experimental Results}
+The model demonstrates high accuracy in detecting cracks and potholes under diverse road conditions. Pruning results in significant speed improvements with minimal impact on detection performance.
+
+\chapter{Conclusion and Future Work}
+\section{Conclusion}
+This thesis demonstrates the feasibility of deploying AI-powered road damage detection systems on resource-constrained edge devices. By combining ITS, AI, and IoT, the proposed solution offers a scalable and cost-effective approach for real-time infrastructure monitoring.
+
+\section{Future Work}
+Future efforts will focus on:
+\begin{itemize}
+    \item Expanding the dataset to include more diverse road conditions.
+    \item Enhancing the system's robustness to varying environmental factors.
+    \item Integrating predictive maintenance features using historical data.
+\end{itemize}
+
+\appendix
+\chapter{Appendix}
+\section{Code Snippets}
+Sample code for deploying the YOLO11n-OBB model on Raspberry Pi is provided below:
+\begin{lstlisting}[language=Python, caption=Training code]
+import cv2
+from yolov5 import YOLO
+
+# Load the model
+model = YOLO('yolo11n-obb.pt')
+
+# Capture image
+image = cv2.imread('road_image.jpg')
+
+# Run inference
+results = model(image)
+results.show()
+\end{lstlisting}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

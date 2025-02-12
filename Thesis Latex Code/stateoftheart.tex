@@ -1,0 +1,45 @@
+\chapter{State of the Art}
+
+The detection and analysis of road cracks are crucial for maintaining infrastructure and ensuring road safety. Traditional methods, while effective, often involve labor-intensive manual inspections or expensive hardware solutions \cite{pierece2024}. This chapter provides an overview of the current state of the art in road crack analysis, highlighting the limitations of existing approaches and the potential of new methodologies.
+
+\section{Traditional Methods}
+
+Traditional methods of road crack analysis rely heavily on manual inspections, which are labor-intensive and time-consuming \cite{pierece2024}. Inspectors must physically examine road surfaces, documenting and assessing cracks. This process is not only slow but also prone to human error. Since documentation is not standardized, reports can vary significantly between inspectors, and inspectors may sometimes overlook certain areas. To improve efficiency and coverage, inspectors later began using cars driven at slow speeds. This approach allowed them to cover more ground while minimizing fatigue and exposure to the elements. However, it still carries the risk of human error and remains impractical for daily analysis due to traffic and other factors \cite{pierece2024}.
+
+\section{Hardware-Intensive Approaches}
+
+Recent advancements have introduced hardware-intensive approaches for road crack detection, such as car-mounted sensors and laser-based imaging systems \cite{bmwpaper,yu2011}. Laser-based imaging offers the advantage of being unaffected by lighting conditions and provides highly accurate and reproducible results, which is unlikely with traditional methods \cite{yu2011}. Many companies have made these systems available to governments through public-private partnerships, as they are better suited for detailed road analysis, with some even providing 3D road maps \cite{yu2011,pierece2024}. However, a significant disadvantage of laser-based systems is the cost of the hardware and the system's complexity. Although complexity has decreased over time, it still requires a specialized vehicle equipped with the hardware and system, making daily deployment costly and impractical for covering large areas quickly \cite{yu2011}.
+
+Vehicle sensor-based analysis, on the other hand, does not require specialized hardware. It utilizes existing vehicle sensors to detect subtle bumps and fluctuations in road roughness. These signals are processed to generate a rough estimate of the road condition, highlighting potential abnormalities \cite{bmwpaper}. However, this method faces challenges related to vehicle maintenance. The accuracy of the data depends on proper vehicle upkeep, making large-scale analysis difficult since road roughness perception varies between vehicles, and the general public may not maintain their vehicles regularly. Furthermore, the system may require recalibration after each maintenance, hindering large-scale deployment.
+
+\section{Using Machine Learning and Computer Vision}
+
+
+
+Machine Learning and Computer Vision algorithms are popular for automatic road surface damage detection due to their effectiveness in processing large amounts of visual data. Therefore, the mentioned approaches might represent an alternative to the traditional methodology based on manual inspection, which is too time-consuming and expensive, besides risking people.
+
+Among these, deep learning represents a subcategory of machine learning that recently has shown quite promising results. Because of their architecture, namely the convolutional neural networks that are very good for the accurate detection and classification of road surface damages, deep learning models can thus automatically extract complex features from images. Quite a number of researchers have therefore tried different architectures of CNNs and object detection algorithms for road damage detection, with large differences in accuracy and computational efficiency.
+
+A few of the newer models have achieved state-of-the-art accuracy for object detection tasks: two-stage detectors such as Region Convolutional Neural Networks, Fast R-CNN, and Faster R-CNN. Initially, these models produce proposals about the regions of interest and then classify and refine them. However, because of their computationally intensive nature, they may not be appropriate for real-time applications or any deployment on resource-constrained platforms. For example, although effective, Faster R-CNN may be computationally too expensive for bridge steel crack detection. In, Pham et al. \cite{130} evaluated Faster R-CNN with Detectron2 and obtained F1 scores of 51.0\% and 51.4\% on test1 and test2 sets of the Global Road Damage Detection Challenge 2020. The authors mentioned the discrepancies in labeling the dataset. Although the Pham et al. visualisations produced good prediction results, their F1 scores were low. These models have, in addition, high precision, requiring much computational power and, hence, are not suitable for real-time use on low-end devices \cite{130}.
+
+The opposite is the case in the family of one-stage detectors such as SSD and YOLO. They are faster because both tasks of classification and bounding box regression are performed in one stage. These networks are computationally more effective and hence can be used in real-time applications. For instance, YOLOv5 achieved 59.9\% mAP in road damage detection from UAV imagery \cite{Silva2023}. YOLOv7 was also documented by another research to achieve an overall F1 score of 59\% on the road damage dataset \cite{Silva2023}.
+
+Another single-stage model reported to have high precision in detecting road damage is RetinaNet \cite{7}. Ale et al. , for example, reported an mAP of 0.8279 with a RetinaNet detector with a VGG19 backbone but at the average time of 0.5 seconds per image. While generally one-stage detectors are faster compared to two-stage detectors, some of them might sacrifice some accuracy relative to two-stage detectors \cite{7}. For example, while SSD and YOLO are fast, they might not be able to achieve the same level of accuracy as Faster R-CNN in complex scenarios. Few works explored lightweight models like MobileNet and SqueezeNet for real-time usage only, but these may perform not so well on such versatile datasets of road damages \cite{Ha2022}. In particular, the works from Maeda et al. experimented SSD with Inception V2 and MobileNet, and stated that, even though they run on a smartphone, their recall on certain types of damages is low, i.e., 0.05 for D11 with SSD Inception V2 \cite{Maeda2018}.These models suffer badly from the quality and quantity of the training data.
+
+Most of the works used publicly available datasets such as RDD2018 and RDD2020 for training and testing \cite{ Ale2018,Arya2021}. Not all datasets can be representative regarding all road conditions or damage types, thus generalization power of the trained models can be affected. Moreover, some models were trained with rather small amount of data compared with others and hence are unable to generalize well on new, previously unseen data. For example, a lightweight autoencoder-based approach reported 79.33\% detection accuracy, as measured by the F1-score, but for only a small dataset of 1058 images \cite{ Samma2021}. GAN-based data augmentation methods are followed to increase the variation in the data; hence, its performance may vary. Various efforts have been made to improve the precision and effectiveness of these models.
+
+A few works have tried to use transfer learning; they fine-tuned models that were already trained on large datasets like ImageNet, for the purpose of conducting road damage detection \cite{ Arya2021, Samma2021}. In that respect, other domains' features are utilized in order to enhance the performance of a model when the road damage dataset is really small. Another group of techniques that has been utilized in this task incorporates an attention mechanism, normalization techniques, and multi-scale feature fusion \cite{ Ha2022, Zhang2022}. For example, Zhang et al.  proposed a baseline method with attention fusion and normalization to reduce the impact of the sparse pixel distribution of road damage, which achieved an F1-Score of 34.73\% on the CNRDD dataset \cite{ Zhang2022}. Furthermore, others have designed specific loss functions and modified networks to achieve higher scores \cite{Silva2023}. Most of the deep learning models have the potential of automatic road damage detection, but model choices depend on requirements on accuracies, speeds, and available computational resources. For real-world applications, a trade-off between accuracy and computational speed has to be achieved.
+
+Hence, this paper approach is to create a lightweight model that can be used in production for the real time system proposed mentioned in the section \ref{meth} by using diverse dataset and lightweight base model such as YOLO. 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Aditya> scp -r "E:\Aditya_Thesis_Project\runs\obb\train8\weights" aditya@192.168.2.161:~/rddyolo
+aditya@192.168.2.161's password:
+best.pt                                                                               100%   16MB  11.4MB/s   00:01
+last.onnx                                                                             100%   10MB  12.5MB/s   00:00
+last.pt                                                                               100%   16MB  11.1MB/s   00:01
+last.torchscript                                                                      100%   11MB  11.2MB/s   00:00
+PS C:\Users\Aditya> scp -r "E:\Aditya_Thesis_Project\runs\obb\train8\weights" aditya@192.168.2.161:~/rddyolo
+aditya@192.168.2.161's password:
+best.pt                                                                               100%   16MB  20.3MB/s   00:00
+last.onnx                                                                             100%   10MB  12.1MB/s   00:00
+last.pt                                                                               100%   16MB  12.8MB/s   00:01
+last.torchscript                                                                      100%   11MB  20.3MB/s   00:00
+last_prune.pt                                                                         100%   20MB  15.8MB/s   00:01
+PS C:\Users\Aditya> scp -r "E:\Aditya_Thesis_Project\runs\obb\train8\weights" aditya@192.168.2.161:~/rddyolo
+aditya@192.168.2.161's password:
+best.pt                                                                               100%   16MB  12.0MB/s   00:01
+last.onnx                                                                             100%   10MB  12.9MB/s   00:00
+last.pt                                                                               100%   16MB  15.4MB/s   00:01
+last.torchscript                                                                      100%   11MB  20.5MB/s   00:00
+last_prune.pt                                                                         100%   20MB  15.1MB/s   00:01
+last_prune_80.pt                                                                      100%   19MB  18.4MB/s   00:01
+PS C:\Users\Aditya> scp -r "E:\Aditya_Thesis_Project\runs\obb\train8\weights" aditya@192.168.2.161:~/rddyolo
+aditya@192.168.2.161's password:
+best.pt                                                                               100%   16MB  10.9MB/s   00:01
+last.onnx                                                                             100%   10MB   8.7MB/s   00:01
+last.pt                                                                               100%   16MB  19.1MB/s   00:00
+last.torchscript                                                                      100%   11MB  13.3MB/s   00:00
+last_prune.pt                                                                         100%   20MB  11.7MB/s   00:01
+last_prune_80.pt                                                                      100%   19MB  18.1MB/s   00:01
+last_prune_90.pt                                                                      100%   20MB  15.1MB/s   00:01
+PS C:\Users\Aditya> scp -r "E:\Aditya_Thesis_Project\runs\obb\train8\weights" aditya@192.168.2.161:~/rddyolo
+aditya@192.168.2.161's password:
+best.pt                                                                               100%   16MB  13.2MB/s   00:01
+last.onnx                                                                             100%   10MB  18.6MB/s   00:00
+last.pt                                                                               100%   16MB  14.2MB/s   00:01
+last.torchscript                                                                      100%   11MB  11.4MB/s   00:00
+last_prune.pt                                                                         100%   20MB  10.1MB/s   00:01
+last_prune_80.pt                                                                      100%   19MB  13.9MB/s   00:01
+last_prune_80_v2.pt                                                                   100%   19MB  14.9MB/s   00:01
+last_prune_90.pt                                                                      100%   20MB  13.1MB/s   00:01
+PS C:\Users\Aditya>

@@ -1,0 +1,57 @@
+\chapter{Introduction}
+
+\section{Motivation}
+One of the most capricious and costly expenditures faced by municipalities around the world is road surface deterioration. In the UK alone, a house of common library report made it known that 20\% of carriageway maintenance budgets are assigned to immediate repairs, costs that rise astronomically when small cracks are ignored and develop into potholes\cite{stewart2024potholes}. The same report found an enormous backlog of repairs to potholes during 2022/23, estimated at close to £968.9 million, hence justifying the critical nature of early crack detection\cite{stewart2024potholes}. Potholes do not only weigh heavily on the public purse; they are equally a serious threat to safety on the roads and to vehicles. According to research done by the government of India in 2021, main reason 0.8\% of the accidents occurred during the year was due to potholes out which 1481 deaths and 3103 injuries have been recorded \cite{government}.
+\section{Problem Statement}
+The current road inspection techniques have different drawbacks. Manual inspection, though traditional, is laborious and slow. Technology-driven approaches, such as vehicle sensor-based monitoring, provide real-time data on road health and anomalies like sudden roughness changes. However, the accuracy of these methods depends largely on regular vehicle maintenance \cite{bmwpaper}. Laser imaging, though not constrained by the limitations of visible light, is dependent on special equipment and trained personnel, which in effect makes frequent surveys impractical\cite{yu2011}.
+
+It is these limitations that have motivated research into computer vision-based machine learning models for automatic road damage detection. Several recent works reported very promising results with high accuracies on diverse datasets: a VGG19-based model, an average mAP of 82.79\% \cite{Ale2018}, and another with the inclusion of severity analysis at an accuracy of 91.2\% \cite{Ha2022}. Highly performing models usually require big computational resources, hence are not affordable for real-time deployment on regular vehicles. Moreover, real-time video feeds of multiple vehicles simultaneously would introduce severe data transmission bottlenecks if processed centrally. Thus, there is a strong necessity to develop lightweight models for deployment in edge devices. In this context, the paper explores a bit deeper on YOLOv4 model that was trained using RDD2022 and got a mean average precision of 63.58\% for smartphone deployment\cite{Doshi2020}.
+This thesis, therefore, aims to develop a lightweight but accurate model to be deployed and tested on an edge device called Raspberry Pi 5 to later on be implemented in real life to dash-cam which would provide real-world road damage detection and report automatically back to the local authority via IoT connectivity.
+
+
+
+\section{Methodology} \label{meth}
+The aim of this thesis is to develop a lightweight model for detecting road surface deterioration in real-time within an urban environment. This model is intended for implementation in a system as illustrated in Figure:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/final_system.png}
+    \caption{Real Time Road Surface Deterioration System}
+    \label{fig:fdbifb-label}
+\end{figure}
+\newline
+The proposed system captures frames from a car's dash-cam, processes them to meet the model's input requirements, and then feeds them into the model.  Once any form of deterioration has been detected by the model, it saves the information and sends it to the database of the local municipality. It is then processed into a report that the municipal officers are able to go through and take appropriate action on it.
+
+Considering the average city speed worldwide is 60 km/h and the an assumed camera's field of view is 2 meters, so for the system to function effectively, the model must achieve a minimum frame rate of 9 FPS (frames per second) on an edge device such as the Raspberry Pi 5. Additional tasks such as frame manipulation, saving, and sending data must also be taken into consideration which would require model to run above 9 FPS . The frame capture rate will depend on the car's speed, provided it remains below 60 km/h and not stationary . 
+\begin{equation}
+\text{Minimum FPS}=\frac{\left(\frac{\text{Distance covered in one hour in meters}}{3600}\right)}{\text{Field of view of the dash-cam in meters}}
+\label{framerate}
+\end{equation}
+
+To evaluate the model's accuracy, we will use the mAP50 score, which summarizes the model's performance across all classes and intersection over union thresholds.
+\begin{equation}
+\text{mAP} = \frac{1}{N} \sum_{i=1}^{N} \text{AP}_i
+\end{equation}
+
+Subsequently, the model will be pruned to reduce its weight and increase FPS with minimal impact on accuracy.
+
+\section{Thesis overview}
+The rest of this thesis is organized as follows:
+\begin{itemize}
+    \item Chapter 1: Introduction and Methodology of the thesis.
+    \subitem This chapter introduces the thesis topic, outlines the research objectives, and details the methodologies implemented in the study.
+    \item Chapter 2: State of the Art
+    \subitem This chapter reviews various types of technologies and methods used in road surface deterioration detection and analyzes relevant research papers in the field.
+    \item Chapter 3: Specifications
+    \subitem This chapter provides a detailed description of the system, including an overview of the models, datasets, evaluation metrics, training parameters, and pruning techniques employed in the study.
+    \item Chapter 4: Implementation, Testing \& Results
+    \subitem This chapter outlines the development and deployment of the proposed system, detailing the testing procedures and analyzing the results obtained from implementation and evaluation. 
+    \item Chapter 5: Conclusion \& Future Work 
+    \subitem This chapter summarizes the key outcomes of this work and the contribution it makes. Also it discusses on the possible future work on this project and the current limitations.  
+\end{itemize}
+
+
+
+
+
+
+

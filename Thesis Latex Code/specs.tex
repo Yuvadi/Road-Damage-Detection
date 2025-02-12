@@ -1,0 +1,218 @@
+\chapter{Specifications}\label{specs}
+
+\section{System overview}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/final_system.png}
+    \caption{Representation of the System}
+    \label{fig:dfkdnf-label}
+\end{figure}
+
+The designed real-time road surface deterioration detection system incorporates computer vision, deep learning techniques, and IoT connectivity. It is optimized specifically for efficient performance over edge platforms, including the Raspberry Pi 5, for real-time processing and timely reporting of detected road abnormalities. What follows is an in-depth frame processing pipeline detail:
+
+\subsection{Frame Acquisition}
+A dashcam continuously records video frames at a predefined frame rate. The number of frames captured per second varies based on the camera’s field of view (FOV) and the vehicle’s speed, as determined by Equation \ref{framerate}, provided the vehicle is in motion.
+
+\subsection{Pre-processing of the Frame}
+The frames taken into the consideration for analysis then go through a pre-processing step in which the images are resized to 640 by 640 pixels which is the maximum input for an YOLO model and it is then gray-scaled as the model is trained on gray-scale images.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/RGB.png}
+    \caption{Pre-Processing of the image}
+    \label{fig:RGB-label}
+\end{figure}
+
+\subsection{Model Inference}
+Once frame is converted as per the requirement then it is given to the model to predict the following types of the cracks it is trained on:
+\begin{itemize}
+    \item Longitudinal Cracks (D00)
+    \item Transverse Cracks (D10)
+    \item Alligator Cracks (D20)
+    \item Potholes (D40)
+\end{itemize}
+
+After the model predicts and gives out the results with the confidence of it detecting the damage an appropriate threshold is applied to avoid false detections and Non-Maximum Suppression (NMS) is applied to remove any duplicate bounding boxes given by the model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/RGB (1).png}
+    \caption{Model Predication}
+    \label{fig:1020-label}
+\end{figure}
+
+
+ \subsection{Data Storage \& Transmission}
+
+The detected road defects are stored locally on the device for logging purposes.
+
+\noindent If an internet connection is available, the system transmits the detections to a cloud-based database or municipal servers via IoT connectivity.
+
+The report includes:
+\begin{itemize}
+    \item GPS coordinates (if available) for geolocation tagging.
+    \item Timestamp for tracking when the defect was detected.
+    \item Image of the defect for verification by authorities.
+\end{itemize}
+
+\subsection{Actionable Insights \& Reporting}
+
+The city administration is given real-time updates regarding locations of road deterioration, allowing for timely intervention and scheduling of maintenance work.
+
+The system can even generate routine reports that analyze trends in road deterioration over a range of time-frames.
+
+\section{Models Overview}
+
+\subsection{YOLOv3 Tiny}
+YOLOv3 Tiny is a lightweight version of the YOLOv3 model, designed for real-time object detection on resource-constrained devices. It has 13 convolutional layers and approximately 8.848 million parameters, making it faster but slightly less accurate compared to the full YOLOv3 model. It achieves a mean Average Precision (mAP) of around 35.9\% on the COCO validation dataset and is well-suited for applications where speed is critical, such as embedded systems and mobile devices.\cite{redmon2018yolov3}
+
+\subsection{YOLOv7}
+YOLOv7 is a highly efficient real-time object detection model that builds upon the advancements of previous YOLO versions. It has approximately 36.9 million parameters and 104.7 GFLOPs, making it highly efficient for a wide range of computer vision tasks. It achieves a mean Average Precision (mAP) of around 51.4\% on the COCO validation dataset and is known for its balance between speed and accuracy, making it suitable for applications where both performance and efficiency are critical.\cite{wang2022yolov7}
+
+\subsection{YOLO11n}
+YOLO11n is the latest iteration in the Ultralytics YOLO series, offering cutting-edge accuracy, speed, and efficiency. It has approximately 2.6 million parameters and 6.5 GFLOPs, making it versatile for various computer vision tasks, including object detection, instance segmentation, and image classification. It achieves a mean Average Precision (mAP) of around 39.5\% on the COCO validation dataset. YOLO11n is optimized for deployment across different environments, including edge devices and cloud platforms.\cite{khanam2024yolov11,yolo11_ultralytics}
+
+\subsection{YOLO11n-OBB}
+YOLO11n-OBB is a variant of the YOLO11 model designed for oriented bounding box (OBB) detection. It enhances traditional object detection by detecting objects at different angles, making it suitable for applications such as aerial or satellite image analysis. YOLO11n-OBB offers high accuracy and efficiency, making it ideal for edge devices and real-time applications.\cite{khanam2024yolov11,yolo11_ultralytics}
+
+\subsection{YOLO11n-Seg}
+YOLO11n-Seg is a variant of the YOLO11 model designed for instance segmentation. It goes beyond object detection by identifying individual objects in an image and segmenting them from the rest of the image. YOLO11n-Seg provides high accuracy and efficiency, making it suitable for applications where precise object boundaries are required.\cite{khanam2024yolov11,yolo11_ultralytics}
+
+
+
+\section{Data Collection and Preprocessing}
+In this thesis we mainly focus on four types of main cracks as followed: Longitudinal Cracks (D00), Transverse Cracks (D10), Alligator Cracks (D20), and Potholes (D40).
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/long.jpeg}
+        \caption{Longitudinal Cracks (D00) \href{https://engineeringdiscoveries.com/type-of-pavement-cracks-and-how-to-repair/}{Source: Engineering Discoveries}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/transverse.png}
+        \caption{Transverse Cracks (D10) \href{https://www.researchgate.net/figure/Transverse-cracking-in-pavement-structure-with-semi-rigid-surface-layer_fig2_270808511}{Source: Researchgate}}
+    \end{minipage}
+    \vfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/aligator.jpeg}
+        \caption{Alligator Cracks (D20) \\        \href{https://bocapalmbeachsealcoating.com/asphalt-fatigue-cracking/}{Source: Preventive Maintenance}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/potholes1.jpg}
+        \caption{Potholes (D40)\\        \href{https://www.depaulachevrolet.com/pothole-damage-that-sinking-feeling-and-what-to-do-about-it/}{Source: DePaula Chevrolet}}
+    \end{minipage}
+    \label{fig:types of cracks}
+\end{figure}
+
+\subsection{Dataset Overview}
+To Train a model, a combination of two datasets was used by taking the inspiration from a GitHub repo of Ahmed Nahmad with the title RDD2022 \cite{nahmad2000ModifiedRDD2022}.
+
+The main dataset that is used is RDD2022 dataset from Crowd Sensing-based Road Damage Detection challenge, CRDDC’2022. It is one of the biggest dataset available for road surface deterioration. \cite{Arya2022}. The dataset contains 11 classes: D10, D00, D20, D40, D44, D01,  D11, D43, D50, Repair, Block crack. The images were collected from six countries as followed: India, Japan, Czech Republic, Norway, Unites States, and China \cite{Arya2022}. The dataset is annotated in json format. Here is a detail chart on contents of the dataset provided by the organizers of the challenge:
+
+\begin{figure}[H] 
+    \centering \includegraphics[width=0.8\linewidth]{figures/datasetogrdd2022.png} \caption{RDD2022 Dataset Overview \href{https://orddc2024.sekilab.global/data/}{Source: ORDDC}} \label{fig:rdd2022} 
+\end{figure}
+
+
+The second dataset used is from Kaggle which is combination of multiple other datasets solely focusing on potholes by the user DenisG04. The version used in thesis is 8th version where the user has re-annoted the images the annotation have been save yolo format.\cite{kaggle}.
+
+\subsection{Preprocessing Steps}
+
+First, the annotations were converted to one and the same format that could be used in training; then the images were gray-scaled and resized to 640 by 640 pixels for each dimension, according to the model's input layer requirements. Then these two datasets were combined. In the case of duplicates where the same images appeared in both the RDD2022 and Kaggle datasets, the image from RDD2022 was retained since its number of crack annotations was greater. Finally, the combined dataset was split into training, validation, and test sets in a ratio of 70\% for training, 20\% for validation, and 10\% for testing.
+
+\section{Performance Metrics}
+This paper focuses on two metrics, mean Average Precision at 50\% (mAP50) for the accuracy of the model and Frames per second (FPS) which is evaluated how many frames can the model process in one second.
+
+\subsection{Frames per second (FPS)}
+The FPS metric is one of the key factors in assessing the performance of the exported model in real-time applications. Testing for FPS calculation is to be done in the test section of the dataset. Thus, the average FPS will come out to be the total number of images in that section divided by the total duration taken to process those. This metric gives a full overview of how many frames the model can process in real life with efficiency, ensuring practical applicability and effectiveness.
+
+\begin{equation}
+\text{FPS} = \frac{\text{Total number of images}}{\text{Total duration taken}}
+\end{equation}
+
+
+\subsection{mean Average Precision at 50\% (mAP50)}
+
+The mean Average Precision (mAP) is a widely used metric for evaluating object detection models. The mAP50 metric specifically refers to the mean Average Precision calculated at an Intersection over Union (IoU) threshold of 50\%.\cite{padilla2021comparative}
+
+\subsection{Intersection over Union (IoU)}
+IoU measures the overlap between a predicted bounding box and a ground truth bounding box. It is calculated as:
+\begin{equation}
+\text{IoU} = \frac{\text{area of overlap}}{\text{area of union}}
+\end{equation}\cite{padilla2021comparative}
+
+\subsection{Precision and Recall}
+Precision is the ratio of true positive detections to the total number of positive detections (true positives + false positives):
+
+\begin{equation} P = \frac{TP}{TP + FP} \end{equation}\cite{padilla2021comparative}
+
+Recall is the ratio of true positive detections to the total number of ground truth instances (true positives + false negatives):
+
+\begin{equation} R = \frac{TP}{TP + FN} \end{equation}\cite{padilla2021comparative}
+
+\subsection{Average Precision (AP)}
+Average Precision (AP) is calculated as the area under the precision-recall curve. It summarizes the model's precision and recall performance for a specific class:
+
+\begin{equation} AP = \int_{0}^{1} P(R) \, dR \end{equation}\cite{padilla2021comparative}
+
+\subsection{Mean Average Precision (mAP)}
+Mean Average Precision (mAP) is the average of the AP values across all classes. The mAP50 metric calculates the mAP at an IoU threshold of 50\%, meaning a detection is considered correct if the IoU between the predicted and ground truth boxes is at least 50\%.
+
+\begin{equation}
+\text{mAP} = \frac{1}{N} \sum_{i=1}^{N} \text{AP}_i
+\end{equation}
+
+In this equation, \(N\) represents the number of classes, and \(\text{AP}_i\) is the average precision for the \(i\)-th class.\cite{padilla2021comparative}
+
+
+\section{Training Parameters}
+Careful parameter tuning was done for the training of the model. During training, the learning rate was kept constant at 0.001, while the weight decay was kept constant at 0.0005 to avoid over-fitting. The training image size for the model was 640 × 640 pixels and was resized appropriately to match the input layer. The optimizer used here is Adam, efficient for sparse gradients. Besides, momentum was set to 0.937 while the learning rate factor (lrf) was set to 0.001. Training also included validation, caching of the results, and resume if some checkpoint exists. Model saving was done every 20 epochs.
+
+All the YOLO models initially were set to train with the minimum required training cycles to see the potential whether further training would be worth it or not. This helped select those that were most promising to be taken for extended training. Later on, promising models were further trained up to a total of 450 epochs in total.
+
+
+\section{Model Optimization
+Pruning Techniques}\label{puringtech}
+
+For better efficiency with maintaining performance, several pruning techniques have been applied to the YOLO model by reducing its size and inference time.
+
+\subsection{Threshold-Based Pruning:}
+
+Threshold: Threshold refers to the value computed from weights of the BatchNorm layers that prune all weights less than the computed threshold value and maintain only the most important filters.
+\\
+\noindent BatchNorm Layers: Normalizes the output of a previous activation layer by subtracting the batch mean and dividing by the batch standard deviation.
+
+\subsection{Layer-Wise Pruning:}
+
+Convolutional Layers: Apply convolution on the input for feature extraction and reducing the spatial dimensions.\\
+
+\noindent Filters: Kernels in the convolutional layers are for the detection of particular features in the input data.
+
+\noindent BatchNorm Parameters: Weights and biases of BatchNorm layers are modified in the process of pruning.
+
+\subsection{Sequential Pruning:}
+
+Layers that come in a sequence such as C3k2 and SPPF for sequential layers are pruned while maintaining the model architecture.\\
+
+\noindent C3k2 : A layer type particular in the YOLO model.
+
+\noindent SPPF : A specific layer type in YOLO.
+
+\subsection{Distillation Loss:}
+
+Distillation loss function: Loss function used when training a smaller model, or student model, to mimic a larger one, teacher model.\\
+
+\noindent Student Model: Smaller model which learns from the knowledge of a larger teacher model.
+
+\noindent Teacher Model: Larger model, usually pre-trained, which provides knowledge to the student model.
+
+\noindent Soft Labels: Probabilities produced by the teacher model to guide the student model.
+
+\noindent Hard Loss: The standard cross-entropy loss between the student model outputs and the true labels.
